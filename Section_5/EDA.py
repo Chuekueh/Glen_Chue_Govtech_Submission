@@ -4,7 +4,9 @@ import numpy as np
 #Look at distribution of data to see if it is normally distributed across all classes
 non_dummy = pd.read_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/Data/non_dummy.csv')
 
-#Value count for class, looks like no class imbalance of this dataset in terms of target, can try ML directly
+#Value count for class, 
+#looks like no target class imbalance of this dataset in terms of target,
+#might need to control for class of car in training and test dataset
 non_dummy_maint_value_count = non_dummy['maint'].value_counts()
 """
 vhigh    432
