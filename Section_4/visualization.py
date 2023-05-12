@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
@@ -16,24 +17,17 @@ confirmed_df = pd.DataFrame(confirmed)
 recovered_df = pd.DataFrame(recovered)
 death_df = pd.DataFrame(death)
 
-#Plot Charts 
-plt.plot(confirmed_df['Date'], confirmed_df['Cases'])
+# Plot
+plt.figure()
+plt.plot(recovered_df['Date'], recovered_df['Cases'])
 plt.xlabel('Date')
-plt.ylabel('Number of Cases')
-plt.title('Confirmed COVID-19 Cases in Singapore')
+plt.ylabel('Number of Recoveries')
+plt.title('Confirmed COVID-19 Recoveries in Singapore')
+ax = plt.gca()
+ax.xaxis.set_major_locator(mdates.MonthLocator(interval=4))
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%d-%m-%Y'))
+plt.gcf().autofmt_xdate() # Rotation
 
-# Set the x-axis tick frequency to show every 6 months
-plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=6))
-plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
 
-# Get the x-axis tick positions and labels
-x_ticks = plt.gca().get_xticks()
-x_tick_labels = [pd.to_datetime(tm, unit='ms').strftime('%Y-%m') for tm in x_ticks]
-
-# Set the modified x-axis tick labels
-plt.gca().set_xticks(x_ticks)
-plt.gca().set_xticklabels(x_tick_labels, rotation=45)
-
-# Save the graph as an image
-plt.savefig('covid_cases.png')
+plt.savefig('covid_deaths.png')
 print("done")
