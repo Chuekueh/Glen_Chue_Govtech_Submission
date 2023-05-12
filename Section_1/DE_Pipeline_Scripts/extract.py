@@ -5,7 +5,7 @@ from constants import *
 from utils import add_in_cols
 import os
 
-def data_ingestion ():
+def data_extraction ():
     #Loading in Input Data 
     input_data = pd.DataFrame(columns=['date_of_birth', 'mobile_no', 'name', 'email'])
 
@@ -34,4 +34,4 @@ def data_ingestion ():
             print(e)
 
 if __name__ == "__main__":
-    data_ingestion ()
+    data_extraction ()
