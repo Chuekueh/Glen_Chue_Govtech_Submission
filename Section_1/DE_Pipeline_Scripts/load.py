@@ -1,32 +1,31 @@
+import os
 import pandas as pd 
 from constants import *
 from utils import enforce_data_types
 
 def data_load():
-    print(f"Preparing data from {TRANSFORM_DIR}/{SUCESS_TRANSFORM_FILE} and {TRANSFORM_DIR}/{UNSUCESSFUL_TRANSFORM_FILE} for Loading")
-    succesful_applicants = pd.read_csv(f"{TRANSFORM_DIR}/{SUCESS_TRANSFORM_FILE}")
-    unsuccesful_applicants = pd.read_csv(f"{TRANSFORM_DIR}/{UNSUCESSFUL_TRANSFORM_FILE}")
 
-    print("Enforcing Datatypes")
-    column_data_types = {
-        'membership_id':'str',
-        'first_name':'str',
-        'last_name': 'str',
-        'email': 'str',
-        'date_of_birth': 'str',
-        'mobile_no': 'str',
-        'above_18': 'bool'
-    }
+    files = [os.path.join(EXTRACT_DIR, f) for f in os.listdir(TRANSFORM_DIR) if os.path.isfile(os.path.join(TRANSFORM_DIR, f))]
 
-    succesful_applicants = enforce_data_types(succesful_applicants, column_data_types)
-    unsuccesful_applicants = enforce_data_types(unsuccesful_applicants, column_data_types)
+    for file in files:
+        try:
+            print(f"Preparing data from {file} for Loading")
+            data = pd.read_csv(file)
+            print("Enforcing Datatypes")
+            data = enforce_data_types(data, column_data_types)
 
-    print(f"Saving cleaned succesful applicants data to {SUCCESFUL_LOAD_DIR}/{SUCESS_LOAD_FILE}")
-    succesful_applicants.to_csv(f"{SUCCESFUL_LOAD_DIR}/{SUCESS_LOAD_FILE}")
-    print(f"Saving cleaned succesful applicants data to {UNSUCCESFUL_LOAD_DIR}/{UNSUCESSFUL_LOAD_FILE}")
-    unsuccesful_applicants.to_csv(f"{UNSUCCESFUL_LOAD_DIR}/{UNSUCESSFUL_LOAD_FILE}")
+            if "succesfil_applicants" in os.path.basename(file):
+                print(f"Saving cleaned succesful applicants data to {SUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final")
+                data.to_csv(f"{SUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final", index=False)
+            else:
+                print(f"Saving cleaned succesful applicants data to {UNSUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final")
+                data.to_csv(f"{UNSUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final")
 
-    print('Data Succesfully Loaded')
+            os.remove(file)
+            print(f"Removed {file} as successfully transformed to load state")
+
+        except Exception as e:
+            raise e
 
 if __name__ == "__main__":
     data_load ()
