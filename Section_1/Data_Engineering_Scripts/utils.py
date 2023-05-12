@@ -28,7 +28,7 @@ def is_18_years_old(date_str):
         return False
 
 def succesful_application(row):
-    has_name = bool(row['Name'])
-    has_eight_digits_handphone = bool(str(row['Handphone']).isdigit() and len(str(row['Handphone'])) == 8)
+    has_name = bool(row['name'])
+    has_eight_digits_handphone = bool(str(row['mobile_no']).isdigit() and len(str(row['mobile_no'])) == 8)
     is_above_18 = row['above_18']
     return has_name and has_eight_digits_handphone and is_above_18
