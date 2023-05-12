@@ -37,9 +37,9 @@ succesful_applicants['membership_id'] = succesful_applicants.apply(generate_memb
 
 # Write to relevant folders
 print(f"Saving Succesful applicants to {TRANSFORM_DIR}/{SUCESS_TRANSFORM_FILE}")
-succesful_applicants.to_csv(f"{TRANSFORM_DIR}/{SUCESS_TRANSFORM_FILE}")
-print(f"Saving Unuccesful applicants to {TRANSFORM_DIR}/{UNSUCESSFUL_TRANSFORM_FILE}")
+succesful_applicants.to_csv(f"{TRANSFORM_DIR}/{SUCESS_TRANSFORM_FILE}", index=False)
+print(f"Saving Unuccesful applicants to {TRANSFORM_DIR}/{UNSUCESSFUL_TRANSFORM_FILE}", index=False)
 unsuccesful_applicants.to_csv(f"{TRANSFORM_DIR}/{UNSUCESSFUL_TRANSFORM_FILE}")
 
-print('Done')
+print('Data Batch Succesfully Transformed')
 
