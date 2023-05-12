@@ -14,6 +14,6 @@ processed_input_data = add_in_cols(input_data)
 ingested_data = processed_input_data[['membership_id','first_name','last_name','name','email','date_of_birth',
                             'mobile_no','above_18','succesful','processed_time']]
 
-ingested_data.to_csv(f"{INGEST_DIR}/data_batch_{datetime.now().strftime('%Y%m%d%H')}", index=False)
+ingested_data.to_csv(f"{INGEST_DIR}/data_batch_{datetime.now().strftime('%Y%m%d%H')}.csv", index=False)
 
 print(f"{len(ingested_data)} data points sucessfully ingested at {datetime.now().strftime('%Y %m %d %H')} hrs")
