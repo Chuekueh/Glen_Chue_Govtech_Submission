@@ -18,4 +18,7 @@ column_data_types = {
 succesful_applicants = enforce_data_types(succesful_applicants, column_data_types)
 unsuccesful_applicants = enforce_data_types(unsuccesful_applicants, column_data_types)
 
+succesful_applicants.to_csv(f"{LOAD_DIR}/{SUCESS_LOAD_FILE}")
+unsuccesful_applicants.to_csv(f"{LOAD_DIR}/{UNSUCESSFUL_LOAD_FILE}")
+
 print('done')
