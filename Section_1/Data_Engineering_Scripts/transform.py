@@ -14,7 +14,7 @@ print(f"Beginning above_18 Column Transformation")
 raw_data['above_18'] = raw_data['date_of_birth'].apply(is_18_years_old)
 
 print(f"Beginning succesful Column Transformation")
-raw_data['succesful'] = raw_data.apply(succesful_application, axis=1)
+raw_data['is_succesful'] = raw_data.apply(succesful_application, axis=1)
 
 print(f"Beginning first_name Column Transformation")
 raw_data['first_name'] = raw_data['email'].apply(lambda x:x.split('@')[0].split('_')[0])

@@ -10,7 +10,7 @@ def add_in_cols (df):
     df['last_name'] = ""
     df['above_18'] = False 
     df['membership_id'] = ""
-    df['succesful'] = False
+    df['is_succesful'] = False
     return df 
 
 def process_dob(date_str):
