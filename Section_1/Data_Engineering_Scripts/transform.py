@@ -4,8 +4,8 @@ from utils import process_dob, is_18_years_old, succesful_application, generate_
 
 def data_transform():
     # obtain ingested data that was processed within the same hour 
-    print(f"Beginning Data Transformation for {EXTRACT_DIR}/{INGEST_FILE}")
-    raw_data = pd.read_csv(f'{EXTRACT_DIR}/{INGEST_FILE}')
+    print(f"Beginning Data Transformation for {EXTRACT_DIR}/{EXTRACT_FILE}")
+    raw_data = pd.read_csv(f'{EXTRACT_DIR}/{EXTRACT_FILE}')
 
     # Preprocessing Steps
     print(f"Beginning date_of_birth Column Transformation")
