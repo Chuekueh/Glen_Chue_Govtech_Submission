@@ -17,7 +17,7 @@ def process_dob(date_str):
     try:
         return parser.parse(date_str).strftime('%Y%m%d')
     except ParserError as e:
-        print(e)
+        print(f'ERROR for dob value {date_str}:', e) 
         return pd.NaT
     
 def is_18_years_old(date_str):
@@ -26,7 +26,7 @@ def is_18_years_old(date_str):
         eighteen_years_ago = pd.Timestamp.now() - relativedelta(years=18)
         return date_of_birth <= eighteen_years_ago
     except TypeError as e:
-        print(e) 
+        print(f'ERROR for dob value {date_str}:', e) 
         return False
 
 def succesful_application(row):
