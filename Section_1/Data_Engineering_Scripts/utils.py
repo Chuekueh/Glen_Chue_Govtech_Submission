@@ -30,5 +30,6 @@ def is_18_years_old(date_str):
 def succesful_application(row):
     has_name = bool(row['name'])
     has_eight_digits_handphone = bool(str(row['mobile_no']).isdigit() and len(str(row['mobile_no'])) == 8)
+    has_valid_email = row['email'].endswith(('@emailprovider.com', '@emailprovider.net'))
     is_above_18 = row['above_18']
-    return has_name and has_eight_digits_handphone and is_above_18
+    return has_name and has_eight_digits_handphone and is_above_18 and has_valid_email
