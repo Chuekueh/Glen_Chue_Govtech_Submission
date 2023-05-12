@@ -52,6 +52,8 @@ def enforce_data_types(df, column_data_types):
             df[column] = pd.to_datetime(df[column], errors='coerce')
         elif data_type == 'timedelta':
             df[column] = pd.to_timedelta(df[column], errors='coerce')
+        elif data_type == 'bool':
+            df[column] = df[column].astype(bool)
         elif data_type == 'str':
             df[column] = df[column].astype(str)
         else:
