@@ -1,0 +1,1 @@
+0 * * * * python /Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Scripts/extract.py && python /Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Scripts/transform.py && python /Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Scripts/load.py
