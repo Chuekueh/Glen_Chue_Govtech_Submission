@@ -10,7 +10,6 @@ def add_in_cols (df):
     df['above_18'] = False 
     df['membership_id'] = ""
     df['succesful'] = False
-    df['processed_time'] = datetime.now().strftime('%y%m%d%H')
     return df 
 
 def process_dob(date_str):
@@ -33,3 +32,5 @@ def succesful_application(row):
     has_valid_email = row['email'].endswith(('@emailprovider.com', '@emailprovider.net'))
     is_above_18 = row['above_18']
     return has_name and has_eight_digits_handphone and is_above_18 and has_valid_email
+
+
