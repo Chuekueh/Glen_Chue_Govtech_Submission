@@ -13,8 +13,10 @@ raw_data['first_name'] = raw_data['email'].apply(lambda x:x.split('@')[0].split(
 raw_data['last_name'] = raw_data['email'].apply(lambda x:x.split('@')[0].split('_')[1])
 
 #Split into Successful and Unsuccesful appplicants 
-succesful_applicants = raw_data[['membership_id','first_name','last_name','email','date_of_birth',
-                            'mobile_no','above_18','succesful','processed_time']]
+succesful_applicants = raw_data[raw_data['succesful'] == True][['membership_id','first_name','last_name','email','date_of_birth',
+                            'mobile_no','above_18']]
+unsuccesful_applicants = raw_data[raw_data['succesful'] == False][['membership_id','first_name','last_name','email','date_of_birth',
+                            'mobile_no','above_18']]
 
 print('Done')
 
