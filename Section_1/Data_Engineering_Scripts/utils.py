@@ -1,4 +1,8 @@
+import pandas as pd
 from datetime import datetime
+from dateutil import parser
+from dateutil.parser import ParserError
+from dateutil.relativedelta import relativedelta
 
 def add_in_cols (df):
     df['first_name'] = ""
@@ -8,3 +12,23 @@ def add_in_cols (df):
     df['succesful'] = False
     df['processed_time'] = datetime.now().strftime('%y%m%d%H')
     return df 
+
+def process_dob(date_str):
+    try:
+        return parser.parse(date_str).strftime('%Y%m%d')
+    except ParserError:
+        return pd.NaT
+    
+def is_18_years_old(date_str):
+    try:
+        date_of_birth = parser.parse(date_str)
+        eighteen_years_ago = pd.Timestamp.now() - relativedelta(years=18)
+        return date_of_birth <= eighteen_years_ago
+    except TypeError:
+        return False
+
+def succesful_application(row):
+    has_name = bool(row['Name'])
+    has_eight_digits_handphone = bool(str(row['Handphone']).isdigit() and len(str(row['Handphone'])) == 8)
+    is_above_18 = row['above_18']
+    return has_name and has_eight_digits_handphone and is_above_18
