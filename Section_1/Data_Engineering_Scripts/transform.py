@@ -1,6 +1,6 @@
 import pandas as pd 
 from constants import *
-from utils import process_dob, is_18_years_old, succesful_application
+from utils import process_dob, is_18_years_old, succesful_application, generate_membership_id
 
 # obtain ingested data that was processed within the same hour 
 raw_data = pd.read_csv(f'{INGEST_DIR}/{INGEST_FILE}')
@@ -17,6 +17,9 @@ succesful_applicants = raw_data[raw_data['succesful'] == True][['membership_id',
                             'mobile_no','above_18']]
 unsuccesful_applicants = raw_data[raw_data['succesful'] == False][['membership_id','first_name','last_name','email','date_of_birth',
                             'mobile_no','above_18']]
+
+#Generate Membership ID for succesful applicants only
+succesful_applicants['membership_id'] = succesful_applicants.apply(generate_membership_id, axis=1)
 
 print('Done')
 
