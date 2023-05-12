@@ -4,6 +4,9 @@ from utils import process_dob, is_18_years_old, succesful_application, generate_
 
 def data_transform():
     # obtain ingested data that was processed within the same hour 
+    raw_data = pd.DataFrame(columns = ['membership_id','first_name','last_name','name','email','date_of_birth',
+                                'mobile_no','above_18','is_succesful'])
+
     print(f"Beginning Data Transformation for {EXTRACT_DIR}/{EXTRACT_FILE}")
     raw_data = pd.read_csv(f'{EXTRACT_DIR}/{EXTRACT_FILE}')
 
