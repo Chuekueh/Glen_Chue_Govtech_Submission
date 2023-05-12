@@ -5,7 +5,7 @@ from utils import enforce_data_types
 
 def data_load():
 
-    files = [os.path.join(EXTRACT_DIR, f) for f in os.listdir(TRANSFORM_DIR) if os.path.isfile(os.path.join(TRANSFORM_DIR, f))]
+    files = [os.path.join(TRANSFORM_DIR, f) for f in os.listdir(TRANSFORM_DIR) if os.path.isfile(os.path.join(TRANSFORM_DIR, f))]
 
     for file in files:
         try:
@@ -14,12 +14,13 @@ def data_load():
             print("Enforcing Datatypes")
             data = enforce_data_types(data, column_data_types)
 
-            if "succesfil_applicants" in os.path.basename(file):
-                print(f"Saving cleaned succesful applicants data to {SUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final")
-                data.to_csv(f"{SUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final", index=False)
-            else:
+            if "unsuccessful_applicants" in os.path.basename(file):
                 print(f"Saving cleaned succesful applicants data to {UNSUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final")
                 data.to_csv(f"{UNSUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final")
+            else:
+                print(f"Saving cleaned succesful applicants data to {SUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final")
+                data.to_csv(f"{SUCCESFUL_LOAD_DIR}/{os.path.basename(file)}_final", index=False)
+                
 
             os.remove(file)
             print(f"Removed {file} as successfully transformed to load state")

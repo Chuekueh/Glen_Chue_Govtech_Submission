@@ -30,10 +30,10 @@ def data_transform():
 
             # Split into Successful and Unsuccesful appplicants 
             print(f"Splitting Dataset into Succesful and Unsuccesful applicants")
-            succesful_applicants = raw_data[raw_data['succesful'] == True][['membership_id','first_name','last_name','email','date_of_birth',
+            succesful_applicants = raw_data[raw_data['is_succesful'] == True][['membership_id','first_name','last_name','email','date_of_birth',
                                         'mobile_no','above_18']]
             print(f"There are a total of {len(succesful_applicants)} succesful applicants in this batch")
-            unsuccesful_applicants = raw_data[raw_data['succesful'] == False][['membership_id','first_name','last_name','email','date_of_birth',
+            unsuccesful_applicants = raw_data[raw_data['is_succesful'] == False][['membership_id','first_name','last_name','email','date_of_birth',
                                         'mobile_no','above_18']]
             print(f"There are a total of {len(unsuccesful_applicants)} unsuccesful applicants in this batch")
 
@@ -44,8 +44,8 @@ def data_transform():
             # Write to relevant folders
             print(f"Saving transformed succesful applicants data to {TRANSFORM_DIR}/{os.path.basename(file)}_successful_applicants_transformed")
             succesful_applicants.to_csv(f"{TRANSFORM_DIR}/{os.path.basename(file)}_successful_applicants_transformed", index=False)
-            print(f"Saving transformed unuccesful applicants to {TRANSFORM_DIR}/{os.path.basename(file)}_unsuccessful_applicants_transformed", index=False)
-            unsuccesful_applicants.to_csv(f"{TRANSFORM_DIR}/{os.path.basename(file)}_unsuccessful_applicants_transformed")
+            print(f"Saving transformed unuccesful applicants to {TRANSFORM_DIR}/{os.path.basename(file)}_unsuccessful_applicants_transformed")
+            unsuccesful_applicants.to_csv(f"{TRANSFORM_DIR}/{os.path.basename(file)}_unsuccessful_applicants_transformed", index=False)
 
             print('Data Batch Succesfully Transformed')
 
@@ -53,7 +53,7 @@ def data_transform():
             print(f"Removed {file} as successfully transformed")
 
         except Exception as e:
-            return e
+            raise e
 
 if __name__ == "__main__":
     data_transform ()
