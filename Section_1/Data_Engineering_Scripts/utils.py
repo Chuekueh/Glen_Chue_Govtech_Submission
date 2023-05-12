@@ -42,6 +42,22 @@ def generate_membership_id(row):
     hashed_birthday = hashlib.sha256(dob.encode()).hexdigest()[:5]
     return f'{last_name}_{hashed_birthday}'
     
+def enforce_data_types(df, column_data_types):
+    for column, data_type in column_data_types.items():
+        if data_type == 'int':
+            df[column] = pd.to_numeric(df[column], errors='coerce', downcast='integer')
+        elif data_type == 'float':
+            df[column] = pd.to_numeric(df[column], errors='coerce', downcast='float')
+        elif data_type == 'datetime':
+            df[column] = pd.to_datetime(df[column], errors='coerce')
+        elif data_type == 'timedelta':
+            df[column] = pd.to_timedelta(df[column], errors='coerce')
+        elif data_type == 'str':
+            df[column] = df[column].astype(str)
+        else:
+            raise ValueError(f"Invalid data type '{data_type}' specified for column '{column}'.")
+
+    return df
     
 
 
