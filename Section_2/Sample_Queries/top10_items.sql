@@ -1,0 +1,5 @@
+select 
+    ITEM_ID, 
+    count(*)
+FROM PURCHASE_DETAILS
+GROUP BY 1 ORDER BY 2 DESC LIMIT 3;
