@@ -24,3 +24,9 @@ input_data = {'maint': 'High',
               'class':'good'}
 
 data = pd.DataFrame(input_data)
+
+ML_input_data = encoder.transform(data)
+
+Predicted_buying_price = predict_with_model(ML_input_data, prediction_model)
+
+print(f"The predicted buying price is {Predicted_buying_price}")
