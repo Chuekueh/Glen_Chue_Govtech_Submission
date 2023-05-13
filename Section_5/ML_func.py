@@ -1,6 +1,7 @@
 import os
 import pickle
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
@@ -18,7 +19,7 @@ def encode_categorical(X,y, dir_path):
     # Encode the target variable
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y)
-    y_encoded = y_encoded.ravel()
+    y_encoded = np.reshape(y_encoded, (-1,))
 
     #Save Models
     encoder_save_path = os.path.join(dir_path, "encoder.pkl")
