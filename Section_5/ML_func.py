@@ -68,7 +68,7 @@ def find_best_random_forest(X, y):
     # Print the best parameters
     print("Best Parameters:", best_params)
 
-    return best_model
+    return best_model, best_params
 
 def evaluate_model(X_test, y_test, model):
     # Make predictions on the test set
