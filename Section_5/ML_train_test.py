@@ -71,8 +71,10 @@ if __name__ == "__main__":
 
             model_results.update({
                 model_path:{'precision':precision, 
-                                 'recall': recall,
-                                 'f1': f1}
+                            'recall': recall,
+                            'f1': f1,
+                            'label_encoder':label_encoder_path,
+                            'encoder': encoder_path}
             })
     
 ## While I only tried RF Models in this project, given the data size i think perhaps I should have tried with SVR/SVM which
