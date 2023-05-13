@@ -15,4 +15,6 @@ available_models = pd.DataFrame.from_dict(model_metadata, orient='index')
 prediction_model = select_model(available_models, 'precision')
 
 # Define Input Data and Carry our prediction
-input_data = 
+input_data = {'Name': ['Alice', 'Bob', 'Charlie'],
+              'Age': [25, 30, 35],
+              'Score': [80, 90, 95]}
