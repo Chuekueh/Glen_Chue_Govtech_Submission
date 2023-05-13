@@ -76,7 +76,7 @@ def find_best_random_forest(X, y, dir_path, seed):
     best_score = grid_search.best_score_
 
     #Write the Log of the Grid Search to a file called ML_training.log in the current dir 
-    with open(f"{dir_path}/ML.training_log", "w") as file:
+    with open(f"{dir_path}/ML_training_{seed}.log", "w") as file:
         file.write("Parameter Grid:\n")
         file.write(str(grid_search.param_grid) + "\n\n")
         file.write("CV Results:\n")
