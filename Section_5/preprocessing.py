@@ -19,13 +19,17 @@ non_dummy.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/Dat
 X = non_dummy.drop(['buying','row_num'],axis=1)
 y = non_dummy['buying']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 
 # Print the buying distribution in the train and test sets
 print("Buying distribution in train set:")
 print(y_train.value_counts(normalize=True))
+print("Class distribution in train set:")
+print(X_train['class'].value_counts(normalize=True))
 print("\nBuying distribution in test set:")
 print(y_test.value_counts(normalize=True))
+print("Class distribution in test set:")
+print(X_test['class'].value_counts(normalize=True))
 
 X_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_80_20/train_features.csv')
 y_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_80_20/train_label.csv')
