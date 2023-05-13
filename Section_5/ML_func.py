@@ -26,7 +26,7 @@ def encode_categorical(X,y, label_encoder_path, encoder_path):
         pickle.dump(encoder, file)
     
     with open(label_encoder_path, 'wb') as file:
-        pickle.dump(encoder, file)
+        pickle.dump(label_encoder, file)
     
     return X_encoded, y_encoded
 

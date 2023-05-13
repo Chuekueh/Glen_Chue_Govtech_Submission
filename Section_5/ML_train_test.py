@@ -49,7 +49,6 @@ def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_
     return precision, recall, f1
 
 if __name__ == "__main__":
-    
     model_results = {}
 
     data_dir = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data'
@@ -71,6 +70,7 @@ if __name__ == "__main__":
             model_results[model_path] = {'precision':precision, 
                                  'recall': recall,
                                  'f1': f1}
+    print(model_results)
 
 
 
