@@ -1,7 +1,7 @@
 import pickle
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score,
+from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
 
 def find_best_random_forest(X, y, path):
     # Define the parameter grid for Random Forest
