@@ -17,7 +17,7 @@ for dir_name in os.listdir(data_dir):
         X_train_encoded, y_train_encoded = encode_categorical(X_train, y_train, dir_path)
 
         # Find the best Random Forest model
-        best_rf_model, best_params = find_best_random_forest(X_train_encoded, y_train_encoded)
+        best_rf_model = find_best_random_forest(X_train_encoded, y_train_encoded)
         
         # Save the best model to the same directory
         model_save_path = os.path.join(dir_path, "best_rf_model.pkl")
