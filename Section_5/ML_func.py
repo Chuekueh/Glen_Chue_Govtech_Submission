@@ -34,7 +34,7 @@ def encode_categorical(X,y, dir_path):
     return X_encoded, y_encoded
 
 
-def find_best_random_forest(X, y):
+def find_best_random_forest(X, y, dir_path):
     # Define the parameter grid for Random Forest
     param_grid = {
         'n_estimators': [100, 200, 300],  # Number of trees in the forest
@@ -61,6 +61,25 @@ def find_best_random_forest(X, y):
     # Get the best model and its parameters
     best_model = grid_search.best_estimator_
     best_params = grid_search.best_params_
+    best_score = grid_search.best_score_
+
+    #Write the Log of the Grid Search to a file called ML_training.log in the current dir 
+    with open(f"{dir_path}/ML.training_log", "w") as file:
+        file.write("Parameter Grid:\n")
+        file.write(str(grid_search.param_grid) + "\n\n")
+        file.write("CV Results:\n")
+        results = grid_search.cv_results_
+        for i, params in enumerate(results['params']):
+            file.write(f"Parameters: {params}\n")
+            file.write(f"Mean F1 Score: {results['mean_test_f1_score'][i]}\n")
+            file.write(f"Mean Precision: {results['mean_test_precision'][i]}\n")
+            file.write(f"Mean Recall: {results['mean_test_recall'][i]}\n")
+            file.write(f"Mean AUC Score: {results['mean_test_auc_score'][i]}\n\n")
+        
+        file.write("Best Parameters:\n")
+        file.write(str(best_params) + "\n")
+        file.write("Best Score:\n")
+        file.write(str(best_score))
     
     # Fit the best model on the entire dataset
     best_model.fit(X, y)
