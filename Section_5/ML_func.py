@@ -110,8 +110,17 @@ def select_model(df, criteria):
     max_index = df[criteria].idxmax()
 
     model_path = df.loc[max_index].index
+    encoder_path = df.loc[max_index].encoder
+    label_encoder_path = df.loc[max_index].label_encoder
 
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
-        
-    return model
+
+    with open(encoder_path, 'rb') as file:
+        encoder = pickle.load(file)
+
+    with open(label_encoder_path, 'rb') as file:
+        label_encoder = pickle.load(file)
+    
+
+    return model, encoder, label_encoder

@@ -51,8 +51,8 @@ def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_
     return precision, recall, f1
 
 if __name__ == "__main__":
-    model_results = json.loads('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json')
-
+    # model_results = json.loads('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json')
+    model_results = {}
     data_dir = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data'
     for dir_name in os.listdir(data_dir):
         dir_path = os.path.join(data_dir, dir_name)
