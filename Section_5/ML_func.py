@@ -51,6 +51,8 @@ def evaluate_model(X_test, y_test, model):
     print("Recall:", recall)
     print("F1 Score:", f1)
 
+    return precision, recall, f1
+
 def predict_with_model(X, model):
     # Make predictions using the best model
     predictions = model.predict(X)
