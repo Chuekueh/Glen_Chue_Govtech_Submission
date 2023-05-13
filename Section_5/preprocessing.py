@@ -64,5 +64,5 @@ final_X_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5
 final_y_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/train_label.csv')
 final_X_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/test_features.csv')
 final_y_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/test_label.csv')
-print('done')
+
 
