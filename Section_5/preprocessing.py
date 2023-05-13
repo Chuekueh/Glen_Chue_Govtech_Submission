@@ -1,6 +1,7 @@
 import pandas as pd 
 import numpy as np 
 from sklearn.preprocessing import LabelBinarizer
+from sklearn.model_selection import train_test_split
 
 
 car_data = pd.read_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/Data/car_data.csv', names = 
@@ -15,6 +16,22 @@ non_dummy = car_data
 non_dummy.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/Data/non_dummy.csv', header=True)
 
 #Splitting Data into training and testing Datasets without stratifying based on class 
+X = non_dummy.drop('buying',axis=1)
+y = non_dummy['buying']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+
+# Print the buying distribution in the train and test sets
+print("Buying distribution in train set:")
+print(y_train.value_counts(normalize=True))
+print("\nBuying distribution in test set:")
+print(y_test.value_counts(normalize=True))
+
+X_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_75_25/train_features.csv')
+y_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_75_25/train_label.csv')
+X_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_75_25/test_features.csv')
+y_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_75_25/test_label.csv')
+
 
 #Splitting Data into training and testing Datasets with stratifying based on class
 
