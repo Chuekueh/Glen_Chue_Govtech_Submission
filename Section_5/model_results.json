@@ -1,8 +1,1 @@
-{"/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_80_20/best_rf_model.pkl":
-    {"precision": 0.42383535152963064, "recall": 0.37988422575976843, "f1": 0.373406514702957}, 
- "/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_75_25/best_rf_model.pkl": 
-    {"precision": 0.43994462889859526, "recall": 0.3966049382716049, "f1": 0.38788659588925534}, 
- "/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_80_20/best_rf_model.pkl": 
-    {"precision": 0.45150720010402934, "recall": 0.38639652677279307, "f1": 0.36738515807264865}, 
- "/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/best_rf_model.pkl": 
-    {"precision": 0.4640939800163251, "recall": 0.39351851851851855, "f1": 0.3783916631314373}}
+{"/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_80_20/best_rf_model.pkl":{"precision": 0.42383535152963064, "recall": 0.37988422575976843, "f1": 0.373406514702957}, "/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Non_Stratified_75_25/best_rf_model.pkl": {"precision": 0.43994462889859526, "recall": 0.3966049382716049, "f1": 0.38788659588925534},"/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_80_20/best_rf_model.pkl":{"precision": 0.45150720010402934, "recall": 0.38639652677279307, "f1": 0.36738515807264865},"/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/best_rf_model.pkl":{"precision": 0.4640939800163251, "recall": 0.39351851851851855, "f1": 0.3783916631314373}}
