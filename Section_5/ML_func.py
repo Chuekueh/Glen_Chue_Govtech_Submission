@@ -1,9 +1,40 @@
+import os
 import pickle
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
 
-def find_best_random_forest(X, y, path):
+def encode_categorical(X,y, dir_path):
+    x_categorical_cols = ['maint','doors','persons','lug_boot','safety','class']
+    # Perform one-hot encoding on categorical columns
+    encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
+    X_encoded = pd.DataFrame(encoder.fit_transform(X[x_categorical_cols]))
+
+    # Reassign the encoded categorical columns to the original DataFrame
+    X_encoded.columns = encoder.get_feature_names(x_categorical_cols)
+    X_encoded_final = pd.concat([X.drop(x_categorical_cols, axis=1), X_encoded], axis=1)
+    
+    # Encode the target variable
+    label_encoder = LabelEncoder()
+    y_encoded = label_encoder.fit_transform(y)
+
+    #Save Models
+    encoder_save_path = os.path.join(dir_path, "encoder.pkl")
+    label_encoder_save_path = os.path.join(dir_path, "label_encoder.pkl")
+    
+    with open(encoder_save_path, 'wb') as file:
+        pickle.dump(encoder, file)
+    
+    with open(label_encoder_save_path, 'wb') as file:
+        pickle.dump(encoder, file)
+    
+    return X_encoded_final, y_encoded
+
+
+
+def find_best_random_forest(X, y):
     # Define the parameter grid for Random Forest
     param_grid = {
         'n_estimators': [100, 200, 300],  # Number of trees in the forest
@@ -25,10 +56,6 @@ def find_best_random_forest(X, y, path):
     # Get the best model and its parameters
     best_model = grid_search.best_estimator_
     best_params = grid_search.best_params_
-
-     # Save the best model to a file
-    with open(path, 'wb') as file:
-        pickle.dump(best_model, file)
     
     # Fit the best model on the entire dataset
     best_model.fit(X, y)
