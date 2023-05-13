@@ -105,3 +105,13 @@ def predict_with_model(X, model):
     predictions = model.predict(X)
     
     return predictions
+
+def select_model(df, criteria):
+    max_index = df[criteria].idxmax()
+
+    model_path = df.loc[max_index].index
+
+    with open(model_path, 'rb') as file:
+        model = pickle.load(file)
+        
+    return model
