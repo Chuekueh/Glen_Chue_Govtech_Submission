@@ -74,7 +74,6 @@ def find_best_random_forest(X, y, dir_path):
             file.write(f"Mean F1 Score: {results['mean_test_f1_score'][i]}\n")
             file.write(f"Mean Precision: {results['mean_test_precision'][i]}\n")
             file.write(f"Mean Recall: {results['mean_test_recall'][i]}\n")
-            file.write(f"Mean AUC Score: {results['mean_test_auc_score'][i]}\n\n")
         
         file.write("Best Parameters:\n")
         file.write(str(best_params) + "\n")
