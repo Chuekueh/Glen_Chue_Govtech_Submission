@@ -73,6 +73,9 @@ if __name__ == "__main__":
                                  'f1': f1}
     print(model_results)
 
+## While I only tried RF Models in this project, given the data size i think perhaps I should have tried with SVR/SVM which
+## require less data for learning. But didnt have the time to add it in.
+
 
 
 
