@@ -7,28 +7,43 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
 
-def encode_categorical(X,y, label_encoder_path, encoder_path):
+def encode_categorical(X,y, label_encoder_path, encoder_path, mode):
     x_categorical_cols = ['maint','doors','persons','lug_boot','safety','class']
     # Perform one-hot encoding on categorical columns
-    encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
-    X_encoded = pd.DataFrame(encoder.fit_transform(X[x_categorical_cols]))
+    if mode == 'train':
+        encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
+        X_encoded = pd.DataFrame(encoder.fit_transform(X[x_categorical_cols]))
 
-    # Reassign the encoded categorical columns to the original DataFrame
-    X_encoded.columns = encoder.get_feature_names(x_categorical_cols)
-    
-    # Encode the target variable
-    label_encoder = LabelEncoder()
-    y_encoded = label_encoder.fit_transform(y)
-    y_encoded = np.reshape(y_encoded, (-1,))
+        # Reassign the encoded categorical columns to the original DataFrame
+        X_encoded.columns = encoder.get_feature_names(x_categorical_cols)
+        
+        # Encode the target variable
+        label_encoder = LabelEncoder()
+        y_encoded = label_encoder.fit_transform(y)
+        y_encoded = np.reshape(y_encoded, (-1,))
 
-    #Save Models
-    with open(encoder_path, 'wb') as file:
-        pickle.dump(encoder, file)
+        #Save Models
+        with open(encoder_path, 'wb') as file:
+            pickle.dump(encoder, file)
+        
+        with open(label_encoder_path, 'wb') as file:
+            pickle.dump(label_encoder, file)
+
+        return X_encoded, y_encoded
     
-    with open(label_encoder_path, 'wb') as file:
-        pickle.dump(label_encoder, file)
+    else :
+        # Open Encoders
+        with open(encoder_path, 'rb') as file:
+            encoder = pickle.load(file)
     
-    return X_encoded, y_encoded
+        with open(label_encoder_path, 'rb') as file:
+            label_encoder = pickle.load(file)
+
+        X_encoded = encoder.transform(X[x_categorical_cols])
+        y_encoded = label_encoder.transform(y)
+        y_encoded = np.reshape(y_encoded, (-1,))
+    
+        return X_encoded, y_encoded
 
 
 def find_best_random_forest(X, y, dir_path):

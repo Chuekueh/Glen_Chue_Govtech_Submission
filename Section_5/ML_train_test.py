@@ -9,7 +9,7 @@ def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encod
         X_train = pd.read_csv(X_train_path, index_col=0)
         y_train = pd.read_csv(y_train_path, index_col=0)
         
-        X_train_encoded, y_train_encoded = encode_categorical(X_train, y_train, label_encoder_path, encoder_path)
+        X_train_encoded, y_train_encoded = encode_categorical(X_train, y_train, label_encoder_path, encoder_path, mode='train')
 
         # Find the best Random Forest model
         best_rf_model, best_params, best_score = find_best_random_forest(X_train_encoded, y_train_encoded, dir_path)
@@ -26,19 +26,12 @@ def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_
      
     X_test = pd.read_csv(X_test_path, index_col=0)
     y_test = pd.read_csv(y_test_path, index_col=0)
-
-    with open(encoder_path, 'rb') as file:
-        encoder = pickle.load(file)
-    
-    with open(label_encoder_path, 'rb') as file:
-        label_encoder = pickle.load(file)
     
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
     
     # Encode the test data using the loaded encoders
-    X_test_encoded = encoder.transform(X_test[['maint','doors','persons','lug_boot','safety','class']])
-    y_test_encoded = label_encoder.transform(y_test)
+    X_test_encoded , y_test_encoded = encode_categorical(X_test, y_test, label_encoder_path, encoder_path, mode='test')
     
     # Make predictions on the test set
     y_pred = model.predict(X_test_encoded)
