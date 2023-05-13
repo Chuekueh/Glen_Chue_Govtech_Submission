@@ -122,5 +122,4 @@ def select_model(df, criteria):
     with open(label_encoder_path, 'rb') as file:
         label_encoder = pickle.load(file)
     
-
     return model, encoder, label_encoder
