@@ -46,7 +46,7 @@ def encode_categorical(X, y, label_encoder_path, encoder_path, mode):
         return X_encoded, y_encoded
 
 
-def find_best_random_forest(X, y, dir_path):
+def find_best_random_forest(X, y, dir_path, seed):
     # Define the parameter grid for Random Forest
     param_grid = {
         'n_estimators': [100, 200, 300],  # Number of trees in the forest
@@ -56,7 +56,7 @@ def find_best_random_forest(X, y, dir_path):
     }
     
     # Create a Random Forest classifier with random seed for stability
-    rf_classifier = RandomForestClassifier(random_state=42)
+    rf_classifier = RandomForestClassifier(random_state=seed)
     
     # Define the scoring metric (f1_score in this case)
     # Define the scoring metrics
