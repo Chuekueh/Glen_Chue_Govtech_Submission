@@ -4,6 +4,7 @@ from datetime import datetime
 from constants import *
 from utils import add_in_cols
 import os
+import shutil
 
 def data_extraction ():
     #Loading in Input Data 
@@ -27,8 +28,8 @@ def data_extraction ():
 
             print(f"{len(ingested_data)} data points sucessfully ingested at {datetime.now().strftime('%Y/%m/%d %H')} hrs")
 
-            os.remove(file)
-            print(f"Removed {file} as successfully extracted")
+            shutil.move(file, ARCHIVE_DIR)
+            print(f"{file} moved to archive as successfully extracted")
 
         except Exception as e: 
             print(e)

@@ -1,5 +1,6 @@
 from datetime import datetime
 
+ARCHIVE_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Archive'
 INPUT_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Input_Data'
 EXTRACT_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Extracted_Data'
 TRANSFORM_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Transformed_data'
