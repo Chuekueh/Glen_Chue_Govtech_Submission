@@ -14,11 +14,11 @@ def encode_categorical(X,y, dir_path):
 
     # Reassign the encoded categorical columns to the original DataFrame
     X_encoded.columns = encoder.get_feature_names(x_categorical_cols)
-    X_encoded_final = pd.concat([X.drop(x_categorical_cols, axis=1), X_encoded], axis=1)
     
     # Encode the target variable
     label_encoder = LabelEncoder()
     y_encoded = label_encoder.fit_transform(y)
+    y_encoded = y_encoded.ravel()
 
     #Save Models
     encoder_save_path = os.path.join(dir_path, "encoder.pkl")
@@ -30,8 +30,7 @@ def encode_categorical(X,y, dir_path):
     with open(label_encoder_save_path, 'wb') as file:
         pickle.dump(encoder, file)
     
-    return X_encoded_final, y_encoded
-
+    return X_encoded, y_encoded
 
 
 def find_best_random_forest(X, y):
@@ -47,10 +46,15 @@ def find_best_random_forest(X, y):
     rf_classifier = RandomForestClassifier(random_state=42)
     
     # Define the scoring metric (f1_score in this case)
-    scoring_metric = make_scorer(f1_score)
+    # Define the scoring metrics
+    scoring_metrics = {
+        'precision': make_scorer(precision_score, average='weighted'),
+        'recall': make_scorer(recall_score, average='weighted'),
+        'f1_score': make_scorer(f1_score, average='weighted'),
+    }
     
     # Perform grid search to find the best configuration 
-    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=scoring_metric) ## CV = 3 to improve robustness of results
+    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=scoring_metrics, refit='f1_score') ## CV = 3 to improve robustness of results
     grid_search.fit(X, y)
     
     # Get the best model and its parameters
