@@ -3,7 +3,7 @@ import json
 from ML_func import * 
 import pandas as pd
 
-def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path):
+def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed):
         # Assuming you have the X_train and y_train data for each directory
         
         X_train = pd.read_csv(X_train_path, index_col=0)
@@ -12,7 +12,7 @@ def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encod
         X_train_encoded, y_train_encoded = encode_categorical(X_train, y_train, label_encoder_path, encoder_path, mode='train')
 
         # Find the best Random Forest model
-        best_rf_model, best_params, best_score = find_best_random_forest(X_train_encoded, y_train_encoded, dir_path)
+        best_rf_model, best_params, best_score = find_best_random_forest(X_train_encoded, y_train_encoded, dir_path, seed)
         
         # Save the best model to the same directory
         with open(model_path, 'wb') as file:
@@ -22,7 +22,7 @@ def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encod
         print("Best Parameters:", best_params)
         print("Best Score:", best_score)
      
-def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_path, model_path, average='weighted'):
+def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_path, model_path, seed, average='weighted'):
      
     X_test = pd.read_csv(X_test_path, index_col=0)
     y_test = pd.read_csv(y_test_path, index_col=0)
@@ -55,20 +55,21 @@ if __name__ == "__main__":
             X_test_path = os.path.join(dir_path, "test_features.csv")
             y_test_path = os.path.join(dir_path, "test_label.csv")
 
-            label_encoder_path = os.path.join(dir_path, "label_encoder.pkl")
-            encoder_path = os.path.join(dir_path, "encoder.pkl")
-            model_path = os.path.join(dir_path, "best_rf_model.pkl")
+            for seed in [0,42,135]:
+                label_encoder_path = os.path.join(dir_path, f"label_encoder_{seed}.pkl")
+                encoder_path = os.path.join(dir_path, f"encoder_{seed}.pkl")
+                model_path = os.path.join(dir_path, f"best_rf_model_{seed}.pkl")
 
-            train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path)
-            precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path)
+                train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
+                precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
 
-            model_results.update({
-                model_path:{'precision':precision, 
-                            'recall': recall,
-                            'f1': f1,
-                            'label_encoder':label_encoder_path,
-                            'encoder': encoder_path}
-            })
+                model_results.update({
+                    model_path:{'precision':precision, 
+                                'recall': recall,
+                                'f1': f1,
+                                'label_encoder':label_encoder_path,
+                                'encoder': encoder_path}
+                })
     
 ## While I only tried RF Models in this project, given the data size i think perhaps I should have tried with SVR/SVM which
 ## require less data for learning. But didnt have the time to add it in.
