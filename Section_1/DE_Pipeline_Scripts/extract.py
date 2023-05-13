@@ -28,8 +28,11 @@ def data_extraction ():
 
             print(f"{len(ingested_data)} data points sucessfully ingested at {datetime.now().strftime('%Y/%m/%d %H')} hrs")
 
-            shutil.move(file, ARCHIVE_DIR)
-            print(f"{file} moved to archive as successfully extracted")
+            shutil.copy(f"{EXTRACT_DIR}/data_batch_{datetime.now().strftime('%Y%m%d%H')}.csv", ARCHIVE_DIR)
+            print(f"data_batch_{datetime.now().strftime('%Y%m%d%H')}.csv moved to {ARCHIVE_DIR} as successfully extracted")
+
+            os.remove(file)
+            print(f"{file} remove since succesfully extracted")
 
         except Exception as e: 
             print(e)
