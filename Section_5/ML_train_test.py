@@ -36,7 +36,7 @@ def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_
         model = pickle.load(file)
     
     # Encode the test data using the loaded encoders
-    X_test_encoded = encoder.transform(X_test)
+    X_test_encoded = encoder.transform(X_test[['maint','doors','persons','lug_boot','safety','class']])
     y_test_encoded = label_encoder.transform(y_test)
     
     # Make predictions on the test set
