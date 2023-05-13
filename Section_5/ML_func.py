@@ -7,7 +7,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
 
-def encode_categorical(X,y, dir_path):
+def encode_categorical(X,y, label_encoder_path, encoder_path):
     x_categorical_cols = ['maint','doors','persons','lug_boot','safety','class']
     # Perform one-hot encoding on categorical columns
     encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
@@ -22,13 +22,10 @@ def encode_categorical(X,y, dir_path):
     y_encoded = np.reshape(y_encoded, (-1,))
 
     #Save Models
-    encoder_save_path = os.path.join(dir_path, "encoder.pkl")
-    label_encoder_save_path = os.path.join(dir_path, "label_encoder.pkl")
-    
-    with open(encoder_save_path, 'wb') as file:
+    with open(encoder_path, 'wb') as file:
         pickle.dump(encoder, file)
     
-    with open(label_encoder_save_path, 'wb') as file:
+    with open(label_encoder_path, 'wb') as file:
         pickle.dump(encoder, file)
     
     return X_encoded, y_encoded
