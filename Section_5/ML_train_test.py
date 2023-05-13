@@ -49,6 +49,8 @@ def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_
     return precision, recall, f1
 
 if __name__ == "__main__":
+    
+    model_results = {}
 
     data_dir = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data'
     for dir_name in os.listdir(data_dir):
@@ -64,7 +66,11 @@ if __name__ == "__main__":
             model_path = os.path.join(dir_path, "best_rf_model.pkl")
 
             train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path)
-            test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path)
+            precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path)
+
+            model_results[model_path] = {'precision':precision, 
+                                 'recall': recall,
+                                 'f1': f1}
 
 
 
