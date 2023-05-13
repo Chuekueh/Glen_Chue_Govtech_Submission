@@ -42,7 +42,7 @@ y_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Dat
 X = non_dummy.drop(['class','row_num'],axis=1)
 y = non_dummy['class']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, stratify=y, random_state=42)
 
 # Print the buying distribution in the train and test sets
 print("Class distribution in train set:")
@@ -54,9 +54,15 @@ print(y_test.value_counts(normalize=True))
 print("buying distribution in test set:")
 print(X_test['buying'].value_counts(normalize=True))
 
-X_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_80_20/train_features.csv')
-y_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_80_20/train_label.csv')
-X_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_80_20/test_features.csv')
-y_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_80_20/test_label.csv')
+final_y_train = X_train['buying']
+final_X_train = X_train.merge(y_train, left_index=True, right_index=True, how='left')
+
+final_y_test = X_test['buying']
+final_X_test = X_test.merge(y_test, left_index=True, right_index=True, how='left')
+
+final_X_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/train_features.csv')
+final_y_train.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/train_label.csv')
+final_X_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/test_features.csv')
+final_y_test.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data/Stratified_75_25/test_label.csv')
 print('done')
 
