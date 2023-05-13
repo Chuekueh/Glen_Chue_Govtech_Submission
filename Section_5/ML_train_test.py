@@ -1,4 +1,5 @@
 import os
+import json
 from ML_func import * 
 import pandas as pd
 
@@ -50,7 +51,7 @@ def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_
     return precision, recall, f1
 
 if __name__ == "__main__":
-    model_results = {}
+    model_results = json.loads('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json')
 
     data_dir = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data'
     for dir_name in os.listdir(data_dir):
@@ -68,11 +69,12 @@ if __name__ == "__main__":
             train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path)
             precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path)
 
-            model_results[model_path] = {'precision':precision, 
+            model_results.update({
+                model_path:{'precision':precision, 
                                  'recall': recall,
                                  'f1': f1}
-    print(model_results)
-
+            })
+    
 ## While I only tried RF Models in this project, given the data size i think perhaps I should have tried with SVR/SVM which
 ## require less data for learning. But didnt have the time to add it in.
 
