@@ -70,6 +70,7 @@ if __name__ == "__main__":
                                 'label_encoder':label_encoder_path,
                                 'encoder': encoder_path}
                 })
+    print(model_results)
     
 ## While I only tried RF Models in this project, given the data size i think perhaps I should have tried with SVR/SVM which
 ## require less data for learning. But didnt have the time to add it in.
