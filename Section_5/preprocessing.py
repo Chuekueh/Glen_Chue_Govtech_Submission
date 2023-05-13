@@ -14,13 +14,9 @@ car_data['row_num'] = car_data.reset_index().index
 non_dummy = car_data
 non_dummy.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/Data/non_dummy.csv', header=True)
 
-#Create Dummified Dataset for Experimentation 
-## Pandas get dummies 
-pandas_dummy = pd.get_dummies(car_data,
-                     columns = ['maint','doors','persons','lug_boot','safety','class',])
-pandas_dummy.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/Data/pandas_dummy.csv', header=True)
+#Splitting Data into training and testing Datasets without stratifying based on class 
 
-#Splitting Data into training and testing Datasets
+#Splitting Data into training and testing Datasets with stratifying based on class
 
 print('done')
 

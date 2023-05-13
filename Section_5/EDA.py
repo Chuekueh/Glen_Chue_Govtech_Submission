@@ -13,13 +13,17 @@ non_dummy.drop(non_dummy.filter(regex="Unname"),axis=1, inplace=True)
 non_dummy_value_counts = non_dummy.apply(lambda x: x.value_counts()).T.stack()
 
 #Explore Distribution Of other features within each class of cars
-## Distribution of variables seem to be quite even across various classes so will do stratified sampling for class variable to prepare training and testing data
+## Distribution of variables seem to be quite even across various classes so will also try stratified sampling for class variable to prepare training and testing data
 unacc_class = non_dummy[non_dummy['class'] == 'unacc']
+print(unacc_class['buying'].value_counts())
 unacc_class_value_counts = unacc_class.apply(lambda x: x.value_counts()).T.stack()
 acc_class = non_dummy[non_dummy['class'] == 'acc']
+print(acc_class['buying'].value_counts())
 acc_class_value_counts = acc_class.apply(lambda x: x.value_counts()).T.stack()
 good_class = non_dummy[non_dummy['class'] == 'good']
+print(good_class['buying'].value_counts())
 good_class_value_counts = good_class.apply(lambda x: x.value_counts()).T.stack()
 vgood_class = non_dummy[non_dummy['class'] == 'vgood']
+print(vgood_class['buying'].value_counts())
 vgood_class_value_counts = vgood_class.apply(lambda x: x.value_counts()).T.stack()
 print("Done")
