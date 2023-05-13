@@ -12,7 +12,7 @@ def find_best_random_forest(X, y, path):
         'min_samples_leaf': [1, 2, 4]     # Minimum number of samples required to be at a leaf node
     }
     
-    # Create a Random Forest classifier
+    # Create a Random Forest classifier with random seed for stability
     rf_classifier = RandomForestClassifier(random_state=42)
     
     # Define the scoring metric (f1_score in this case)
