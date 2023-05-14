@@ -17,6 +17,10 @@ confirmed_df = pd.DataFrame(confirmed)
 recovered_df = pd.DataFrame(recovered)
 death_df = pd.DataFrame(death)
 
+confirmed_df.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_4/confirmed_cases.csv')
+recovered_df.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_4/recovered_cases.csv')
+death_df.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_4/death_cases.csv')
+
 # Plot
 plt.figure()
 plt.plot(recovered_df['Date'], recovered_df['Cases'])
