@@ -3,13 +3,13 @@ import json
 from ML_func import * 
 import pandas as pd
 
-def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed):
+def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, model_path, seed):
         # Assuming you have the X_train and y_train data for each directory
         
         X_train = pd.read_csv(X_train_path, index_col=0)
         y_train = pd.read_csv(y_train_path, index_col=0)
         
-        X_train_encoded, y_train_encoded = encode_categorical(X_train, y_train, label_encoder_path, encoder_path, mode='train')
+        X_train_encoded, y_train_encoded = encode_categorical(X_train, y_train, label_encoder_path, mode='train')
 
         # Find the best Random Forest model
         if 'rf' in model_path:
@@ -34,7 +34,7 @@ def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encod
             print("Best svm Parameters:", best_svm_params)
             print("Best svm Score:", best_svm_score)
      
-def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_path, model_path, seed, average='weighted'):
+def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, model_path, seed, average='weighted'):
      
     X_test = pd.read_csv(X_test_path, index_col=0)
     y_test = pd.read_csv(y_test_path, index_col=0)
@@ -43,7 +43,7 @@ def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_
         model = pickle.load(file)
     
     # Encode the test data using the loaded encoders
-    X_test_encoded , y_test_encoded = encode_categorical(X_test, y_test, label_encoder_path, encoder_path, mode='test')
+    X_test_encoded , y_test_encoded = encode_categorical(X_test, y_test, label_encoder_path, mode='test')
     
     # Make predictions on the test set
     y_pred = model.predict(X_test_encoded)
