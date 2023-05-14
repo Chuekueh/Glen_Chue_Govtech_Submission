@@ -62,9 +62,9 @@ def find_best_random_forest(X, y, dir_path, seed):
     # Define the scoring metric (f1_score in this case)
     # Define the scoring metrics
     scoring_metrics = {
-        'precision': make_scorer(precision_score, average='weighted'),
-        'recall': make_scorer(recall_score, average='weighted'),
-        'f1_score': make_scorer(f1_score, average='weighted'),
+        'precision': make_scorer(precision_score, average='micro'),
+        'recall': make_scorer(recall_score, average='micro'),
+        'f1_score': make_scorer(f1_score, average='micro'),
     }
     
     # Perform grid search to find the best configuration 
