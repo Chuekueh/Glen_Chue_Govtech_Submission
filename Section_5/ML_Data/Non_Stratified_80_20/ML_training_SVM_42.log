@@ -1,0 +1,44 @@
+Parameter Grid:
+{'C': [0.1, 1, 10], 'kernel': ['linear', 'rbf'], 'gamma': [0.1, 1, 10]}
+
+CV Results:
+Parameters: {'C': 0.1, 'gamma': 0.1, 'kernel': 'linear'}
+Mean F1 Score: 0.28745156210825507
+Parameters: {'C': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}
+Mean F1 Score: 0.10499827178348942
+Parameters: {'C': 0.1, 'gamma': 1, 'kernel': 'linear'}
+Mean F1 Score: 0.28745156210825507
+Parameters: {'C': 0.1, 'gamma': 1, 'kernel': 'rbf'}
+Mean F1 Score: 0.10499827178348942
+Parameters: {'C': 0.1, 'gamma': 10, 'kernel': 'linear'}
+Mean F1 Score: 0.28745156210825507
+Parameters: {'C': 0.1, 'gamma': 10, 'kernel': 'rbf'}
+Mean F1 Score: 0.10499827178348942
+Parameters: {'C': 1, 'gamma': 0.1, 'kernel': 'linear'}
+Mean F1 Score: 0.32449725477400404
+Parameters: {'C': 1, 'gamma': 0.1, 'kernel': 'rbf'}
+Mean F1 Score: 0.2814987505190104
+Parameters: {'C': 1, 'gamma': 1, 'kernel': 'linear'}
+Mean F1 Score: 0.32449725477400404
+Parameters: {'C': 1, 'gamma': 1, 'kernel': 'rbf'}
+Mean F1 Score: 0.10147642338986458
+Parameters: {'C': 1, 'gamma': 10, 'kernel': 'linear'}
+Mean F1 Score: 0.32449725477400404
+Parameters: {'C': 1, 'gamma': 10, 'kernel': 'rbf'}
+Mean F1 Score: 0.02180511529033466
+Parameters: {'C': 10, 'gamma': 0.1, 'kernel': 'linear'}
+Mean F1 Score: 0.3148522607447074
+Parameters: {'C': 10, 'gamma': 0.1, 'kernel': 'rbf'}
+Mean F1 Score: 0.19259678657152404
+Parameters: {'C': 10, 'gamma': 1, 'kernel': 'linear'}
+Mean F1 Score: 0.3148522607447074
+Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+Mean F1 Score: 0.10613675398590712
+Parameters: {'C': 10, 'gamma': 10, 'kernel': 'linear'}
+Mean F1 Score: 0.3148522607447074
+Parameters: {'C': 10, 'gamma': 10, 'kernel': 'rbf'}
+Mean F1 Score: 0.02180511529033466
+Best Parameters:
+{'C': 1, 'gamma': 0.1, 'kernel': 'linear'}
+Best Score:
+0.32449725477400404

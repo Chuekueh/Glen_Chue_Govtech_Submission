@@ -87,10 +87,6 @@ if __name__ == "__main__":
     
     with open('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json', 'w') as file:
         json.dump(model_results, file)
-    
-    
-## While I only tried RF Models in this project, given the data size i think perhaps I should have tried with SVR/SVM which
-## require less data for learning. But didnt have the time to add it in.
 
 
 
