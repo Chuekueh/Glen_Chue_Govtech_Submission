@@ -25,8 +25,13 @@ input_data = {'maint': 'High',
 
 data = pd.DataFrame(input_data)
 
-ML_input_data = encoder.transform(data)
+data['buying'] = label_encoder.fit_transform(data['buying'])
+data['maint'] = label_encoder.fit_transform(data['maint'])
+data['doors'] = label_encoder.fit_transform(data['doors'])
+data['persons'] = label_encoder.fit_transform(data['persons'])
+data['lug_boot'] = label_encoder.fit_transform(data['lug_boot'])
+data['safety'] = label_encoder.fit_transform(data['safety'])
 
-Predicted_buying_price = predict_with_model(ML_input_data, prediction_model)
+Predicted_buying_price = predict_with_model(data, prediction_model)
 
 print(f"The predicted buying price is {Predicted_buying_price}")
