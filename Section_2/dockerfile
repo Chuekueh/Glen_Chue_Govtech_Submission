@@ -1,9 +1,9 @@
 # Use the PostgreSQL base image
 FROM postgres:latest
 
-ENV POSTGRES_PASSWORD: Chuekueh@97
-ENV POSTGRES_USER: glen
-ENV POSTGRES_DB: govtech_assesment
+ENV POSTGRES_PASSWORD=Chuekueh@97
+ENV POSTGRES_USER=glen
+ENV POSTGRES_DB=govtech_assesment
 
 # Copy the create table script(s) into the Docker image
 COPY create_tables.sql /docker-entrypoint-initdb.d/
