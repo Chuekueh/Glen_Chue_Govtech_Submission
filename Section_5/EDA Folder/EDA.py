@@ -3,7 +3,7 @@ import numpy as np
 from scipy.stats import chi2_contingency
 
 #Look at distribution of data to see if it is normally distributed across all classes
-non_dummy = pd.read_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/Data/non_dummy.csv',header=0)
+non_dummy = pd.read_csv('~/Glen_Chue_Govtech_Submission/Section_5/Data/non_dummy.csv',header=0)
 
 non_dummy.drop(non_dummy.filter(regex="Unname"),axis=1, inplace=True)
 

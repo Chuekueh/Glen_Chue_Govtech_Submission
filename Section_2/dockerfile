@@ -11,7 +11,7 @@ COPY create_tables.sql /docker-entrypoint-initdb.d/
 EXPOSE 5432
 
 #Set Working Dir 
-WORKDIR /Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_2
+WORKDIR ~/Glen_Chue_Govtech_Submission/Section_2
 
 # Copy the Dockerfile and application files to the working directory
-COPY . /Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_2
+COPY . ~/Glen_Chue_Govtech_Submission/Section_2

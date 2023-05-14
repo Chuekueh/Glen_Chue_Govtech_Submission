@@ -1,11 +1,11 @@
 from datetime import datetime
 
-ARCHIVE_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Archive'
-INPUT_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Input_Data'
-EXTRACT_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Extracted_Data'
-TRANSFORM_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Transformed_data'
-SUCCESFUL_LOAD_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Successful_Applications'
-UNSUCCESFUL_LOAD_DIR = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Unsuccessful_Applications'
+ARCHIVE_DIR = '~/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Archive'
+INPUT_DIR = '~/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Input_Data'
+EXTRACT_DIR = '~/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Extracted_Data'
+TRANSFORM_DIR = '~/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Transformed_data'
+SUCCESFUL_LOAD_DIR = '~/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Successful_Applications'
+UNSUCCESFUL_LOAD_DIR = '~/Glen_Chue_Govtech_Submission/Section_1/DE_Pipeline_Data/Unsuccessful_Applications'
 
 EXTRACT_FILE = f"data_batch_{datetime.now().strftime('%Y%m%d%H')}.csv"
 

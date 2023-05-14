@@ -19,10 +19,10 @@ death_df = pd.DataFrame(death)
 combined_df = pd.concat([pd.concat([confirmed_df,recovered_df]),death_df])
 
 
-confirmed_df.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_4/confirmed_cases.csv')
-recovered_df.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_4/recovered_cases.csv')
-death_df.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_4/death_cases.csv')
-combined_df.to_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_4/combined_cases.csv')
+confirmed_df.to_csv('~/Glen_Chue_Govtech_Submission/Section_4/confirmed_cases.csv')
+recovered_df.to_csv('~/Glen_Chue_Govtech_Submission/Section_4/recovered_cases.csv')
+death_df.to_csv('~/Glen_Chue_Govtech_Submission/Section_4/death_cases.csv')
+combined_df.to_csv('~/Glen_Chue_Govtech_Submission/Section_4/combined_cases.csv')
 
 
 # Plot

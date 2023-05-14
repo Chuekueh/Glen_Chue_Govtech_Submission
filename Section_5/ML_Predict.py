@@ -4,7 +4,7 @@ from ML_func import *
 import numpy as np
 
 # Read the contents of the JSON file
-with open('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json') as file:
+with open('~/Glen_Chue_Govtech_Submission/Section_5/model_results.json') as file:
     json_data = file.read()
 
 model_metadata = json.loads(json_data)
