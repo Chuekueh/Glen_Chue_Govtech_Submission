@@ -11,13 +11,12 @@ from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
 def encode_categorical(X, y, label_encoder_path, mode):
     # Perform one-hot encoding on categorical columns
     if mode == 'train':
-        label_encoder = LabelEncoder()
-        X['buying'] = label_encoder.fit_transform(X['buying'])
-        X['maint'] = label_encoder.fit_transform(X['maint'])
-        X['doors'] = label_encoder.fit_transform(X['doors'])
-        X['persons'] = label_encoder.fit_transform(X['persons'])
-        X['lug_boot'] = label_encoder.fit_transform(X['lug_boot'])
-        X['safety'] = label_encoder.fit_transform(X['safety'])
+        X['buying'] = X['buying'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
+        X['maint'] = X['maint'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
+        X['doors'] = X['doors'].map({'2':0, '3':1, '4':2, '5more':3})
+        X['persons'] = X['persons'].map({'2':0, '4':1, 'more':2})
+        X['lug_boot'] = X['lug_boot'].map({'small':0, 'med':1, 'big':2})
+        X['safety'] = X['safety'].map({'low':0, 'med':1, 'high':2})
         
         # Encode the target variable
         y_encoded = label_encoder.fit_transform(y)
@@ -35,12 +34,12 @@ def encode_categorical(X, y, label_encoder_path, mode):
         with open(label_encoder_path, 'rb') as file:
             label_encoder = pickle.load(file)
         
-        X['buying'] = label_encoder.fit_transform(X['buying'])
-        X['maint'] = label_encoder.fit_transform(X['maint'])
-        X['doors'] = label_encoder.fit_transform(X['doors'])
-        X['persons'] = label_encoder.fit_transform(X['persons'])
-        X['lug_boot'] = label_encoder.fit_transform(X['lug_boot'])
-        X['safety'] = label_encoder.fit_transform(X['safety'])
+        X['buying'] = X['buying'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
+        X['maint'] = X['maint'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
+        X['doors'] = X['doors'].map({'2':0, '3':1, '4':2, '5more':3})
+        X['persons'] = X['persons'].map({'2':0, '4':1, 'more':2})
+        X['lug_boot'] = X['lug_boot'].map({'small':0, 'med':1, 'big':2})
+        X['safety'] = X['safety'].map({'low':0, 'med':1, 'high':2})
 
         y_encoded = label_encoder.transform(y)
         y_encoded = np.reshape(y_encoded, (-1,))
