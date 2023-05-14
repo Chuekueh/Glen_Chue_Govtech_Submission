@@ -1,0 +1,170 @@
+Parameter Grid:
+{'n_estimators': [100, 200, 300], 'max_depth': [2, 10, 15], 'min_samples_split': [2, 5, 10], 'min_samples_leaf': [1, 2, 4]}
+
+CV Results:
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.2777716567675195
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.2864704385043711
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.2873581051650893
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.13402072827063238
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.1325199995884367
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.12944078113963578
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.1384316983173965
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.1384001370504689
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.1362728486790035
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.16762290048971798
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.15923607630664427
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.15626500419998343
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.1414679476632227
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.14390306410462128
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.13779078553008348
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.14769863919264725
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.14372313261781736
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.14079816975121098
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.17149085277313092
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.16682786396409155
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.16079199624158558
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.18266226923522888
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.17207961014712203
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.17134493235620685
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.18266226923522888
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.17207961014712203
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.17134493235620685
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.17905690565898488
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.17820146358424713
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.17675148329400922
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.12791457076594867
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.1364416723825703
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.1325718194687824
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.13634549768670592
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.13698093037958955
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.1386108924650608
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.161523358982782
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.159077015632227
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.1561939489964795
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.1377621562712287
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.13700920483729298
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.13550734094604858
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.14373901741109063
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.1415950714270461
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.13999926176361688
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.16910297338285596
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.1630975377324806
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.15619505596503364
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100}
+Mean Recall_macro Score: 0.17976219600939078
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 200}
+Mean Recall_macro Score: 0.17734911367161418
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 300}
+Mean Recall_macro Score: 0.1745484892329027
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 100}
+Mean Recall_macro Score: 0.17976219600939078
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 200}
+Mean Recall_macro Score: 0.17734911367161418
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 300}
+Mean Recall_macro Score: 0.1745484892329027
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}
+Mean Recall_macro Score: 0.17281047068844932
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 200}
+Mean Recall_macro Score: 0.17741808539816298
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 300}
+Mean Recall_macro Score: 0.17849729384540747
+Best Parameters:
+{'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Best Score:
+0.2873581051650893
