@@ -8,7 +8,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score, hamming_loss
 
-def encode_categorical(X, y, label_encoder_path, encoder_path, mode):
+def encode_categorical(X, y, label_encoder_path, mode):
     # Perform one-hot encoding on categorical columns
     if mode == 'train':
         label_encoder = LabelEncoder()
