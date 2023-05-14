@@ -13,7 +13,7 @@ model_metadata = json.loads(json_data)
 available_models = pd.DataFrame.from_dict(model_metadata, orient='index')
 
 # Select Best model Based on Prediction (Want to prioritize true positives)
-prediction_model, encoder, label_encoder = select_model(available_models, 'precision')
+prediction_model, label_encoder = select_model(available_models, 'precision')
 
 # Define Input Data and Carry our prediction
 input_data = {'maint': 'High',

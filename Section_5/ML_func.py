@@ -190,9 +190,6 @@ def select_model(df, criteria):
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
 
-    with open(encoder_path, 'rb') as file:
-        encoder = pickle.load(file)
-
     with open(label_encoder_path, 'rb') as file:
         label_encoder = pickle.load(file)
     
