@@ -11,6 +11,7 @@ from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
 def encode_categorical(X, y, label_encoder_path, mode):
     # Perform one-hot encoding on categorical columns
     if mode == 'train':
+        label_encoder = LabelEncoder()
         X['class'] = X['class'].map({'unacc':0, 'acc':1, 'good':2, 'vgood':3})
         X['maint'] = X['maint'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
         X['doors'] = X['doors'].map({'2':0, '3':1, '4':2, '5more':3})
@@ -34,7 +35,7 @@ def encode_categorical(X, y, label_encoder_path, mode):
         with open(label_encoder_path, 'rb') as file:
             label_encoder = pickle.load(file)
         
-        X['class'] = X['buying'].map({'unacc':0, 'acc':1, 'good':2, 'vgood':3})
+        X['class'] = X['class'].map({'unacc':0, 'acc':1, 'good':2, 'vgood':3})
         X['maint'] = X['maint'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
         X['doors'] = X['doors'].map({'2':0, '3':1, '4':2, '5more':3})
         X['persons'] = X['persons'].map({'2':1, '4':2, 'more':3,'missing':0})
@@ -60,12 +61,10 @@ def find_best_random_forest(X, y, dir_path, seed):
     
     # Define the scoring metric (f1_score in this case)
     # Define the scoring metrics
-    scoring_metrics = {
-        make_scorer(recall_score, average='macro')
-    }
+    recall_macro = make_scorer(recall_score, average='macro')
     
     # Perform grid search to find the best configuration 
-    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=scoring_metrics) ## CV = 3 to improve robustness of results
+    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=recall_macro) ## CV = 3 to improve robustness of results
     grid_search.fit(X, y)
     
     # Get the best model and its parameters
@@ -81,10 +80,7 @@ def find_best_random_forest(X, y, dir_path, seed):
         results = grid_search.cv_results_
         for i, params in enumerate(results['params']):
             file.write(f"Parameters: {params}\n")
-            file.write(f"Mean F1 Score: {results['mean_test_f1_score'][i]}\n")
-            file.write(f"Mean Precision: {results['mean_test_precision'][i]}\n")
-            file.write(f"Mean Recall: {results['mean_test_recall'][i]}\n")
-            file.write(f"Mean Hamming Loss: {results['mean_test_hamming_loss'][i]}\n")
+            file.write(f"Mean Recall_macro Score: {results['mean_test_score'][i]}\n")
         
         file.write("Best Parameters:\n")
         file.write(str(best_params) + "\n")
@@ -113,12 +109,10 @@ def find_best_svm_model(X, y, dir_path, seed):
         'gamma': [0.1, 1, 10]
     }
 
-    scoring_metrics = {
-        make_scorer(recall_score, average='macro')
-    }
-
-    # Perform grid search with cross-validation
-    grid_search = GridSearchCV(svm, param_grid, cv=3, scoring=scoring_metrics)
+    recall_macro = make_scorer(recall_score, average='macro')
+    
+    # Perform grid search to find the best configuration 
+    grid_search = GridSearchCV(svm, param_grid, cv=3, scoring=recall_macro) ## CV = 3 to improve robustness of results
     grid_search.fit(X, y)
 
     # Get the best SVM model
@@ -134,10 +128,7 @@ def find_best_svm_model(X, y, dir_path, seed):
         results = grid_search.cv_results_
         for i, params in enumerate(results['params']):
             file.write(f"Parameters: {params}\n")
-            file.write(f"Mean F1 Score: {results['mean_test_f1_score'][i]}\n")
-            file.write(f"Mean Precision: {results['mean_test_precision'][i]}\n")
-            file.write(f"Mean Recall: {results['mean_test_recall'][i]}\n")
-            file.write(f"Mean Hamming Loss: {results['mean_test_hamming_loss'][i]}\n")
+            file.write(f"Mean Recall_macro Score: {results['mean_test_score'][i]}\n")
         
         file.write("Best Parameters:\n")
         file.write(str(best_params) + "\n")

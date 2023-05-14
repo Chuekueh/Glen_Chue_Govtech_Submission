@@ -1,0 +1,44 @@
+Parameter Grid:
+{'C': [0.1, 1, 10], 'kernel': ['linear', 'rbf'], 'gamma': [0.1, 1, 10]}
+
+CV Results:
+Parameters: {'C': 0.1, 'gamma': 0.1, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.3410703075353654
+Parameters: {'C': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.2714767787474879
+Parameters: {'C': 0.1, 'gamma': 1, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.3410703075353654
+Parameters: {'C': 0.1, 'gamma': 1, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.25
+Parameters: {'C': 0.1, 'gamma': 10, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.3410703075353654
+Parameters: {'C': 0.1, 'gamma': 10, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.25
+Parameters: {'C': 1, 'gamma': 0.1, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.34599687101102033
+Parameters: {'C': 1, 'gamma': 0.1, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.3083057447704633
+Parameters: {'C': 1, 'gamma': 1, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.34599687101102033
+Parameters: {'C': 1, 'gamma': 1, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.1375744748397034
+Parameters: {'C': 1, 'gamma': 10, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.34599687101102033
+Parameters: {'C': 1, 'gamma': 10, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.0493163367041732
+Parameters: {'C': 10, 'gamma': 0.1, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.3496699129947767
+Parameters: {'C': 10, 'gamma': 0.1, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.2578959406602414
+Parameters: {'C': 10, 'gamma': 1, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.3496699129947767
+Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.12400201708228585
+Parameters: {'C': 10, 'gamma': 10, 'kernel': 'linear'}
+Mean Recall_macro Score: 0.3496699129947767
+Parameters: {'C': 10, 'gamma': 10, 'kernel': 'rbf'}
+Mean Recall_macro Score: 0.0493163367041732
+Best Parameters:
+{'C': 10, 'gamma': 0.1, 'kernel': 'linear'}
+Best Score:
+0.3496699129947767

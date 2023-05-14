@@ -1,0 +1,22 @@
+Variable 1,Variable 2,Chi-square,P-value,Degrees of Freedom
+buying,maint,0.0,1.0,9
+buying,doors,0.0,1.0,9
+buying,persons,0.0,1.0,6
+buying,lug_boot,0.0,1.0,6
+buying,safety,0.0,1.0,6
+buying,acceptability,189.24300964187327,5.9280625992133936e-36,9
+maint,doors,0.0,1.0,9
+maint,persons,0.0,1.0,6
+maint,lug_boot,0.0,1.0,6
+maint,safety,0.0,1.0,6
+maint,acceptability,142.9405303030303,2.5476519845077733e-26,9
+doors,persons,0.0,1.0,6
+doors,lug_boot,0.0,1.0,6
+doors,safety,0.0,1.0,6
+doors,acceptability,10.384780190165564,0.32024215990030563,9
+persons,lug_boot,0.0,1.0,4
+persons,safety,0.0,1.0,4
+persons,acceptability,371.3367281433981,4.039968047270742e-77,6
+lug_boot,safety,0.0,1.0,4
+lug_boot,acceptability,53.28202539802095,1.0294402753134833e-09,6
+safety,acceptability,479.3224398131512,2.389155399044034e-100,6
