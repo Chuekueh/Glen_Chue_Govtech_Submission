@@ -2,6 +2,7 @@ import os
 import pickle
 import pandas as pd
 import numpy as np
+from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
@@ -76,7 +77,7 @@ def find_best_random_forest(X, y, dir_path, seed):
     best_score = grid_search.best_score_
 
     #Write the Log of the Grid Search to a file called ML_training.log in the current dir 
-    with open(f"{dir_path}/ML_training_{seed}.log", "w") as file:
+    with open(f"{dir_path}/ML_training_RF_{seed}.log", "w") as file:
         file.write("Parameter Grid:\n")
         file.write(str(grid_search.param_grid) + "\n\n")
         file.write("CV Results:\n")
@@ -97,6 +98,55 @@ def find_best_random_forest(X, y, dir_path, seed):
     
     # Print the best parameters
     print("Best Parameters:", best_params)
+
+    return best_model, best_params, best_score
+
+def select_best_svm_model(X, y, dir_path, seed):
+    # Set the random seed
+    np.random.seed(seed)
+
+    # Define the SVM classifier
+    svm = SVC()
+
+    # Define the parameter grid
+    param_grid = {
+        'C': [0.1, 1, 10],
+        'kernel': ['linear', 'rbf'],
+        'gamma': [0.1, 1, 10]
+    }
+
+    # Perform grid search with cross-validation
+    grid_search = GridSearchCV(svm, param_grid, cv=5, scoring='f1_weighted')
+    grid_search.fit(X, y)
+
+    # Get the best SVM model
+    best_model = grid_search.best_estimator_
+    best_params = grid_search.best_params_
+    best_score = grid_search.best_score_
+
+    #Write the Log of the Grid Search to a file called ML_training.log in the current dir 
+    with open(f"{dir_path}/ML_training_SVM_{seed}.log", "w") as file:
+        file.write("Parameter Grid:\n")
+        file.write(str(grid_search.param_grid) + "\n\n")
+        file.write("CV Results:\n")
+        results = grid_search.cv_results_
+        for i, params in enumerate(results['params']):
+            file.write(f"Parameters: {params}\n")
+            file.write(f"Mean F1 Score: {results['mean_test_score'][i]}\n")
+        
+        file.write("Best Parameters:\n")
+        file.write(str(best_params) + "\n")
+        file.write("Best Score:\n")
+        file.write(str(best_score))
+    
+    # Fit the best model on the entire dataset
+    best_model.fit(X, y)
+    
+    # Print the best parameters
+    print("Best Parameters:", best_params)
+
+    return best_model, best_params, best_score
+
 
     return best_model, best_params, best_score
 
