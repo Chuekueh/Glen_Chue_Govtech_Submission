@@ -101,7 +101,7 @@ def find_best_random_forest(X, y, dir_path, seed):
 
     return best_model, best_params, best_score
 
-def select_best_svm_model(X, y, dir_path, seed):
+def find_best_svm_model(X, y, dir_path, seed):
     # Set the random seed
     np.random.seed(seed)
 
