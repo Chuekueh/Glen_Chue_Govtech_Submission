@@ -167,7 +167,7 @@ def predict_with_model(X, model):
 def select_model(df, criteria):
     max_index = df[criteria].idxmax()
 
-    model_path = df.loc[max_index].index
+    model_path = max_index
     encoder_path = df.loc[max_index].encoder
     label_encoder_path = df.loc[max_index].label_encoder
 
