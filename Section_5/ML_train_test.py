@@ -70,7 +70,6 @@ if __name__ == "__main__":
 
             for seed in [0,42,135]:
                 label_encoder_path = os.path.join(dir_path, f"label_encoder_{seed}.pkl")
-                encoder_path = os.path.join(dir_path, f"encoder_{seed}.pkl")
                 model_rf_path = os.path.join(dir_path, f"best_rf_model_{seed}.pkl")
                 model_svm_path = os.path.join(dir_path, f"best_svm_model_{seed}.pkl")
 
@@ -82,8 +81,7 @@ if __name__ == "__main__":
                         model_results[model_path] = {'precision':precision, 
                                     'recall': recall,
                                     'f1': f1,
-                                    'label_encoder':label_encoder_path,
-                                    'encoder': encoder_path}
+                                    'label_encoder':label_encoder_path}
     
     with open('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json', 'w') as file:
         json.dump(model_results, file)
