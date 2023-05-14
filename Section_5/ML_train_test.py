@@ -71,17 +71,19 @@ if __name__ == "__main__":
             for seed in [0,42,135]:
                 label_encoder_path = os.path.join(dir_path, f"label_encoder_{seed}.pkl")
                 encoder_path = os.path.join(dir_path, f"encoder_{seed}.pkl")
-                model_path = os.path.join(dir_path, f"best_rf_model_{seed}.pkl")
+                model_rf_path = os.path.join(dir_path, f"best_rf_model_{seed}.pkl")
+                model_svm_path = os.path.join(dir_path, f"best_svm_model_{seed}.pkl")
 
-                train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
-                precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
+                for model_path in [model_rf_path, model_svm_path]:
+                    train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
+                    precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
 
-                if model_path not in model_results:
-                    model_results[model_path] = {'precision':precision, 
-                                'recall': recall,
-                                'f1': f1,
-                                'label_encoder':label_encoder_path,
-                                'encoder': encoder_path}
+                    if model_path not in model_results:
+                        model_results[model_path] = {'precision':precision, 
+                                    'recall': recall,
+                                    'f1': f1,
+                                    'label_encoder':label_encoder_path,
+                                    'encoder': encoder_path}
     
     with open('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json', 'w') as file:
         json.dump(model_results, file)
