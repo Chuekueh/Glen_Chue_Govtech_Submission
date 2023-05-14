@@ -1,0 +1,413 @@
+Parameter Grid:
+{'n_estimators': [100, 200, 300], 'max_depth': [2, 10, 15], 'min_samples_split': [2, 5, 10], 'min_samples_leaf': [1, 2, 4]}
+
+CV Results:
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.3256172839506173
+Mean Precision: 0.3256172839506173
+Mean Recall: 0.3256172839506173
+Mean Hamming Loss: -0.6743827160493826
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.3279320987654321
+Mean Precision: 0.3279320987654321
+Mean Recall: 0.3279320987654321
+Mean Hamming Loss: -0.6720679012345677
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.3256172839506173
+Mean Precision: 0.3256172839506173
+Mean Recall: 0.3256172839506173
+Mean Hamming Loss: -0.6743827160493826
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.3279320987654321
+Mean Precision: 0.3279320987654321
+Mean Recall: 0.3279320987654321
+Mean Hamming Loss: -0.6720679012345677
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.3256172839506173
+Mean Precision: 0.3256172839506173
+Mean Recall: 0.3256172839506173
+Mean Hamming Loss: -0.6743827160493826
+Parameters: {'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.3279320987654321
+Mean Precision: 0.3279320987654321
+Mean Recall: 0.3279320987654321
+Mean Hamming Loss: -0.6720679012345677
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.3256172839506173
+Mean Precision: 0.3256172839506173
+Mean Recall: 0.3256172839506173
+Mean Hamming Loss: -0.6743827160493826
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.3279320987654321
+Mean Precision: 0.3279320987654321
+Mean Recall: 0.3279320987654321
+Mean Hamming Loss: -0.6720679012345677
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.3256172839506173
+Mean Precision: 0.3256172839506173
+Mean Recall: 0.3256172839506173
+Mean Hamming Loss: -0.6743827160493826
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.3279320987654321
+Mean Precision: 0.3279320987654321
+Mean Recall: 0.3279320987654321
+Mean Hamming Loss: -0.6720679012345677
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.3256172839506173
+Mean Precision: 0.3256172839506173
+Mean Recall: 0.3256172839506173
+Mean Hamming Loss: -0.6743827160493826
+Parameters: {'max_depth': 2, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.3279320987654321
+Mean Precision: 0.3279320987654321
+Mean Recall: 0.3279320987654321
+Mean Hamming Loss: -0.6720679012345677
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.3248456790123457
+Mean Precision: 0.3248456790123457
+Mean Recall: 0.3248456790123457
+Mean Hamming Loss: -0.6751543209876543
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.32716049382716045
+Mean Precision: 0.32716049382716045
+Mean Recall: 0.32716049382716045
+Mean Hamming Loss: -0.6728395061728394
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.3248456790123457
+Mean Precision: 0.3248456790123457
+Mean Recall: 0.3248456790123457
+Mean Hamming Loss: -0.6751543209876543
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.32716049382716045
+Mean Precision: 0.32716049382716045
+Mean Recall: 0.32716049382716045
+Mean Hamming Loss: -0.6728395061728394
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.3294753086419753
+Mean Precision: 0.3294753086419753
+Mean Recall: 0.3294753086419753
+Mean Hamming Loss: -0.6705246913580246
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.3248456790123457
+Mean Precision: 0.3248456790123457
+Mean Recall: 0.3248456790123457
+Mean Hamming Loss: -0.6751543209876543
+Parameters: {'max_depth': 2, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.32716049382716045
+Mean Precision: 0.32716049382716045
+Mean Recall: 0.32716049382716045
+Mean Hamming Loss: -0.6728395061728394
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.1381172839506173
+Mean Precision: 0.1381172839506173
+Mean Recall: 0.1381172839506173
+Mean Hamming Loss: -0.8618827160493826
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.14429012345679013
+Mean Precision: 0.14429012345679013
+Mean Recall: 0.14429012345679013
+Mean Hamming Loss: -0.85570987654321
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.1412037037037037
+Mean Precision: 0.1412037037037037
+Mean Recall: 0.1412037037037037
+Mean Hamming Loss: -0.8587962962962963
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.15200617283950615
+Mean Precision: 0.15200617283950615
+Mean Recall: 0.15200617283950615
+Mean Hamming Loss: -0.847993827160494
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.14737654320987656
+Mean Precision: 0.14737654320987656
+Mean Recall: 0.14737654320987656
+Mean Hamming Loss: -0.8526234567901234
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.14737654320987656
+Mean Precision: 0.14737654320987656
+Mean Recall: 0.14737654320987656
+Mean Hamming Loss: -0.8526234567901234
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.18132716049382716
+Mean Precision: 0.18132716049382716
+Mean Recall: 0.18132716049382716
+Mean Hamming Loss: -0.8186728395061729
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.18364197530864199
+Mean Precision: 0.18364197530864199
+Mean Recall: 0.18364197530864199
+Mean Hamming Loss: -0.816358024691358
+Parameters: {'max_depth': 10, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.18364197530864199
+Mean Precision: 0.18364197530864199
+Mean Recall: 0.18364197530864199
+Mean Hamming Loss: -0.8163580246913581
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.1574074074074074
+Mean Precision: 0.1574074074074074
+Mean Recall: 0.1574074074074074
+Mean Hamming Loss: -0.8425925925925926
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.1574074074074074
+Mean Precision: 0.1574074074074074
+Mean Recall: 0.1574074074074074
+Mean Hamming Loss: -0.8425925925925926
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.15200617283950615
+Mean Precision: 0.15200617283950615
+Mean Recall: 0.15200617283950615
+Mean Hamming Loss: -0.847993827160494
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.1566358024691358
+Mean Precision: 0.1566358024691358
+Mean Recall: 0.1566358024691358
+Mean Hamming Loss: -0.8433641975308642
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.1550925925925926
+Mean Precision: 0.1550925925925926
+Mean Recall: 0.1550925925925926
+Mean Hamming Loss: -0.8449074074074074
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.1597222222222222
+Mean Precision: 0.1597222222222222
+Mean Recall: 0.1597222222222222
+Mean Hamming Loss: -0.8402777777777778
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.17746913580246915
+Mean Precision: 0.17746913580246915
+Mean Recall: 0.17746913580246915
+Mean Hamming Loss: -0.8225308641975309
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.18364197530864199
+Mean Precision: 0.18364197530864199
+Mean Recall: 0.18364197530864199
+Mean Hamming Loss: -0.8163580246913581
+Parameters: {'max_depth': 10, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.19058641975308643
+Mean Precision: 0.19058641975308643
+Mean Recall: 0.19058641975308643
+Mean Hamming Loss: -0.8094135802469135
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.19367283950617287
+Mean Precision: 0.19367283950617287
+Mean Recall: 0.19367283950617287
+Mean Hamming Loss: -0.8063271604938271
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.19753086419753085
+Mean Precision: 0.19753086419753085
+Mean Recall: 0.19753086419753085
+Mean Hamming Loss: -0.8024691358024691
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.19753086419753085
+Mean Precision: 0.19753086419753085
+Mean Recall: 0.19753086419753085
+Mean Hamming Loss: -0.8024691358024691
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.19367283950617287
+Mean Precision: 0.19367283950617287
+Mean Recall: 0.19367283950617287
+Mean Hamming Loss: -0.8063271604938271
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.19753086419753085
+Mean Precision: 0.19753086419753085
+Mean Recall: 0.19753086419753085
+Mean Hamming Loss: -0.8024691358024691
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.19753086419753085
+Mean Precision: 0.19753086419753085
+Mean Recall: 0.19753086419753085
+Mean Hamming Loss: -0.8024691358024691
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.19367283950617284
+Mean Precision: 0.19367283950617284
+Mean Recall: 0.19367283950617284
+Mean Hamming Loss: -0.8063271604938272
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.19212962962962962
+Mean Precision: 0.19212962962962962
+Mean Recall: 0.19212962962962962
+Mean Hamming Loss: -0.8078703703703703
+Parameters: {'max_depth': 10, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.19521604938271606
+Mean Precision: 0.19521604938271606
+Mean Recall: 0.19521604938271606
+Mean Hamming Loss: -0.804783950617284
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.13888888888888887
+Mean Precision: 0.13888888888888887
+Mean Recall: 0.13888888888888887
+Mean Hamming Loss: -0.861111111111111
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.1412037037037037
+Mean Precision: 0.1412037037037037
+Mean Recall: 0.1412037037037037
+Mean Hamming Loss: -0.8587962962962963
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.13657407407407407
+Mean Precision: 0.13657407407407407
+Mean Recall: 0.13657407407407407
+Mean Hamming Loss: -0.8634259259259259
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.14891975308641978
+Mean Precision: 0.14891975308641978
+Mean Recall: 0.14891975308641978
+Mean Hamming Loss: -0.8510802469135802
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.14737654320987656
+Mean Precision: 0.14737654320987656
+Mean Recall: 0.14737654320987656
+Mean Hamming Loss: -0.8526234567901234
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.15046296296296297
+Mean Precision: 0.15046296296296297
+Mean Recall: 0.15046296296296297
+Mean Hamming Loss: -0.8495370370370371
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.17592592592592593
+Mean Precision: 0.17592592592592593
+Mean Recall: 0.17592592592592593
+Mean Hamming Loss: -0.8240740740740741
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.1859567901234568
+Mean Precision: 0.1859567901234568
+Mean Recall: 0.1859567901234568
+Mean Hamming Loss: -0.8140432098765432
+Parameters: {'max_depth': 15, 'min_samples_leaf': 1, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.18209876543209877
+Mean Precision: 0.18209876543209877
+Mean Recall: 0.18209876543209877
+Mean Hamming Loss: -0.8179012345679012
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.15200617283950615
+Mean Precision: 0.15200617283950615
+Mean Recall: 0.15200617283950615
+Mean Hamming Loss: -0.8479938271604938
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.1535493827160494
+Mean Precision: 0.15354938271604937
+Mean Recall: 0.15354938271604937
+Mean Hamming Loss: -0.8464506172839505
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.15123456790123457
+Mean Precision: 0.15123456790123457
+Mean Recall: 0.15123456790123457
+Mean Hamming Loss: -0.8487654320987654
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.1574074074074074
+Mean Precision: 0.1574074074074074
+Mean Recall: 0.1574074074074074
+Mean Hamming Loss: -0.8425925925925926
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.15277777777777776
+Mean Precision: 0.15277777777777776
+Mean Recall: 0.15277777777777776
+Mean Hamming Loss: -0.8472222222222222
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.150462962962963
+Mean Precision: 0.150462962962963
+Mean Recall: 0.150462962962963
+Mean Hamming Loss: -0.8495370370370371
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.18132716049382716
+Mean Precision: 0.18132716049382716
+Mean Recall: 0.18132716049382716
+Mean Hamming Loss: -0.8186728395061729
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.18209876543209877
+Mean Precision: 0.18209876543209877
+Mean Recall: 0.18209876543209877
+Mean Hamming Loss: -0.8179012345679012
+Parameters: {'max_depth': 15, 'min_samples_leaf': 2, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.18209876543209877
+Mean Precision: 0.18209876543209877
+Mean Recall: 0.18209876543209877
+Mean Hamming Loss: -0.8179012345679012
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 100}
+Mean F1 Score: 0.19521604938271606
+Mean Precision: 0.19521604938271606
+Mean Recall: 0.19521604938271606
+Mean Hamming Loss: -0.8047839506172839
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 200}
+Mean F1 Score: 0.1905864197530864
+Mean Precision: 0.1905864197530864
+Mean Recall: 0.1905864197530864
+Mean Hamming Loss: -0.8094135802469137
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 2, 'n_estimators': 300}
+Mean F1 Score: 0.19598765432098764
+Mean Precision: 0.19598765432098764
+Mean Recall: 0.19598765432098764
+Mean Hamming Loss: -0.8040123456790124
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 100}
+Mean F1 Score: 0.19521604938271606
+Mean Precision: 0.19521604938271606
+Mean Recall: 0.19521604938271606
+Mean Hamming Loss: -0.8047839506172839
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 200}
+Mean F1 Score: 0.1905864197530864
+Mean Precision: 0.1905864197530864
+Mean Recall: 0.1905864197530864
+Mean Hamming Loss: -0.8094135802469137
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 300}
+Mean F1 Score: 0.19598765432098764
+Mean Precision: 0.19598765432098764
+Mean Recall: 0.19598765432098764
+Mean Hamming Loss: -0.8040123456790124
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 100}
+Mean F1 Score: 0.19675925925925927
+Mean Precision: 0.19675925925925927
+Mean Recall: 0.19675925925925927
+Mean Hamming Loss: -0.8032407407407408
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 200}
+Mean F1 Score: 0.19598765432098764
+Mean Precision: 0.19598765432098764
+Mean Recall: 0.19598765432098764
+Mean Hamming Loss: -0.8040123456790124
+Parameters: {'max_depth': 15, 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 300}
+Mean F1 Score: 0.19290123456790123
+Mean Precision: 0.19290123456790123
+Mean Recall: 0.19290123456790123
+Mean Hamming Loss: -0.8070987654320988
+Best Parameters:
+{'max_depth': 2, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100}
+Best Score:
+0.3294753086419753

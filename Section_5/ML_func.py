@@ -20,32 +20,32 @@ def encode_categorical(X, y, label_encoder_path, encoder_path, mode):
         X['safety'] = label_encoder.fit_transform(X['safety'])
         
         # Encode the target variable
-        label_encoder = LabelEncoder()
         y_encoded = label_encoder.fit_transform(y)
         y_encoded = np.reshape(y_encoded, (-1,))
 
         #Save Models
-        with open(encoder_path, 'wb') as file:
-            pickle.dump(encoder, file)
-        
         with open(label_encoder_path, 'wb') as file:
             pickle.dump(label_encoder, file)
 
-        return X_encoded, y_encoded
+        return X, y_encoded
     
     else :
         # Open Encoders
-        with open(encoder_path, 'rb') as file:
-            encoder = pickle.load(file)
     
         with open(label_encoder_path, 'rb') as file:
             label_encoder = pickle.load(file)
+        
+        X['buying'] = label_encoder.fit_transform(X['buying'])
+        X['maint'] = label_encoder.fit_transform(X['maint'])
+        X['doors'] = label_encoder.fit_transform(X['doors'])
+        X['persons'] = label_encoder.fit_transform(X['persons'])
+        X['lug_boot'] = label_encoder.fit_transform(X['lug_boot'])
+        X['safety'] = label_encoder.fit_transform(X['safety'])
 
-        X_encoded = encoder.transform(X[x_categorical_cols])
         y_encoded = label_encoder.transform(y)
         y_encoded = np.reshape(y_encoded, (-1,))
     
-        return X_encoded, y_encoded
+        return X, y_encoded
     
 def find_best_random_forest(X, y, dir_path, seed):
     # Define the parameter grid for Random Forest
