@@ -11,10 +11,10 @@ from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
 def encode_categorical(X, y, label_encoder_path, mode):
     # Perform one-hot encoding on categorical columns
     if mode == 'train':
-        X['buying'] = X['buying'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
+        X['class'] = X['class'].map({'unacc':0, 'acc':1, 'good':2, 'vgood':3})
         X['maint'] = X['maint'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
         X['doors'] = X['doors'].map({'2':0, '3':1, '4':2, '5more':3})
-        X['persons'] = X['persons'].map({'2':0, '4':1, 'more':2})
+        X['persons'] = X['persons'].map({'2':1, '4':2, 'more':3,'missing':0})
         X['lug_boot'] = X['lug_boot'].map({'small':0, 'med':1, 'big':2})
         X['safety'] = X['safety'].map({'low':0, 'med':1, 'high':2})
         
@@ -34,10 +34,10 @@ def encode_categorical(X, y, label_encoder_path, mode):
         with open(label_encoder_path, 'rb') as file:
             label_encoder = pickle.load(file)
         
-        X['buying'] = X['buying'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
+        X['class'] = X['buying'].map({'unacc':0, 'acc':1, 'good':2, 'vgood':3})
         X['maint'] = X['maint'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
         X['doors'] = X['doors'].map({'2':0, '3':1, '4':2, '5more':3})
-        X['persons'] = X['persons'].map({'2':0, '4':1, 'more':2})
+        X['persons'] = X['persons'].map({'2':1, '4':2, 'more':3,'missing':0})
         X['lug_boot'] = X['lug_boot'].map({'small':0, 'med':1, 'big':2})
         X['safety'] = X['safety'].map({'low':0, 'med':1, 'high':2})
 

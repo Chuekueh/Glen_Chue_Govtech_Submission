@@ -17,21 +17,21 @@ prediction_model, label_encoder = select_model(available_models, 'precision')
 
 # Define Input Data and Carry our prediction
 input_data = {'maint': 'High',
-              'doors': 4,
+              'doors': '4',
               'persons': 'missing',
               'lug_boot': 'big',
               'safety':'high',
               'class':'good'}
 
-data = pd.DataFrame(input_data)
+X = pd.DataFrame(input_data)
 
-data['buying'] = label_encoder.fit_transform(data['buying'])
-data['maint'] = label_encoder.fit_transform(data['maint'])
-data['doors'] = label_encoder.fit_transform(data['doors'])
-data['persons'] = label_encoder.fit_transform(data['persons'])
-data['lug_boot'] = label_encoder.fit_transform(data['lug_boot'])
-data['safety'] = label_encoder.fit_transform(data['safety'])
+X['class'] = X['class'].map({'unacc':0, 'acc':1, 'good':2, 'vgood':3})
+X['maint'] = X['maint'].map({'low':0, 'med':1, 'high':2, 'vhigh':3})
+X['doors'] = X['doors'].map({'2':0, '3':1, '4':2, '5more':3})
+X['persons'] = X['persons'].map({'2':1, '4':2, 'more':3,'missing':0})
+X['lug_boot'] = X['lug_boot'].map({'small':0, 'med':1, 'big':2})
+X['safety'] = X['safety'].map({'low':0, 'med':1, 'high':2})
 
-Predicted_buying_price = predict_with_model(data, prediction_model)
+Predicted_buying_price = predict_with_model(X, prediction_model)
 
 print(f"The predicted buying price is {Predicted_buying_price}")
