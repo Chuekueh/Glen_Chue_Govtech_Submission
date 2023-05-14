@@ -46,14 +46,11 @@ def encode_categorical(X, y, label_encoder_path, encoder_path, mode):
     
         return X_encoded, y_encoded
     
-
-
-
 def find_best_random_forest(X, y, dir_path, seed):
     # Define the parameter grid for Random Forest
     param_grid = {
         'n_estimators': [100, 200, 300],  # Number of trees in the forest
-        'max_depth': [None, 5, 10],       # Maximum depth of each tree
+        'max_depth': [2, 10, 15],       # Maximum depth of each tree
         'min_samples_split': [2, 5, 10],  # Minimum number of samples required to split an internal node
         'min_samples_leaf': [1, 2, 4]     # Minimum number of samples required to be at a leaf node
     }
@@ -71,7 +68,7 @@ def find_best_random_forest(X, y, dir_path, seed):
     }
     
     # Perform grid search to find the best configuration 
-    grid_search = GridSearchCV(rf_classifier, param_grid, cv=5, scoring=scoring_metrics, refit='f1_score') ## CV = 3 to improve robustness of results
+    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=scoring_metrics, refit='f1_score') ## CV = 3 to improve robustness of results
     grid_search.fit(X, y)
     
     # Get the best model and its parameters
@@ -127,7 +124,7 @@ def find_best_svm_model(X, y, dir_path, seed):
     }
 
     # Perform grid search with cross-validation
-    grid_search = GridSearchCV(svm, param_grid, cv=5, scoring=scoring_metrics, refit='f1_score')
+    grid_search = GridSearchCV(svm, param_grid, cv=3, scoring=scoring_metrics, refit='f1_score')
     grid_search.fit(X, y)
 
     # Get the best SVM model
@@ -143,7 +140,7 @@ def find_best_svm_model(X, y, dir_path, seed):
         results = grid_search.cv_results_
         for i, params in enumerate(results['params']):
             file.write(f"Parameters: {params}\n")
-            file.write(f"Mean F1 Score: {results['mean_test_score'][i]}\n")
+            file.write(f"Mean F1 Score: {results['mean_test_f1_score'][i]}\n")
             file.write(f"Mean Precision: {results['mean_test_precision'][i]}\n")
             file.write(f"Mean Recall: {results['mean_test_recall'][i]}\n")
             file.write(f"Mean Hamming Loss: {results['mean_test_hamming_loss'][i]}\n")
