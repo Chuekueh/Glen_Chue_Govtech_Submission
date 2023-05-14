@@ -6,7 +6,7 @@ from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
-from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score
+from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score, hamming_loss
 
 def encode_categorical(X, y, label_encoder_path, encoder_path, mode):
     x_categorical_cols = ['maint','doors','persons','lug_boot','safety','class']
@@ -45,6 +45,8 @@ def encode_categorical(X, y, label_encoder_path, encoder_path, mode):
         y_encoded = np.reshape(y_encoded, (-1,))
     
         return X_encoded, y_encoded
+    
+
 
 
 def find_best_random_forest(X, y, dir_path, seed):
@@ -65,6 +67,7 @@ def find_best_random_forest(X, y, dir_path, seed):
         'precision': make_scorer(precision_score, average='micro'),
         'recall': make_scorer(recall_score, average='micro'),
         'f1_score': make_scorer(f1_score, average='micro'),
+        'hamming_loss': make_scorer(hamming_loss, greater_is_better=False)
     }
     
     # Perform grid search to find the best configuration 
@@ -87,6 +90,7 @@ def find_best_random_forest(X, y, dir_path, seed):
             file.write(f"Mean F1 Score: {results['mean_test_f1_score'][i]}\n")
             file.write(f"Mean Precision: {results['mean_test_precision'][i]}\n")
             file.write(f"Mean Recall: {results['mean_test_recall'][i]}\n")
+            file.write(f"Mean Hamming Loss: {results['mean_test_hamming_loss'][i]}\n")
         
         file.write("Best Parameters:\n")
         file.write(str(best_params) + "\n")
@@ -115,8 +119,15 @@ def find_best_svm_model(X, y, dir_path, seed):
         'gamma': [0.1, 1, 10]
     }
 
+    scoring_metrics = {
+        'precision': make_scorer(precision_score, average='micro'),
+        'recall': make_scorer(recall_score, average='micro'),
+        'f1_score': make_scorer(f1_score, average='micro'),
+        'hamming_loss': make_scorer(hamming_loss, greater_is_better=False)
+    }
+
     # Perform grid search with cross-validation
-    grid_search = GridSearchCV(svm, param_grid, cv=5, scoring='f1_weighted')
+    grid_search = GridSearchCV(svm, param_grid, cv=5, scoring=scoring_metrics, refit='f1_score')
     grid_search.fit(X, y)
 
     # Get the best SVM model
@@ -133,6 +144,9 @@ def find_best_svm_model(X, y, dir_path, seed):
         for i, params in enumerate(results['params']):
             file.write(f"Parameters: {params}\n")
             file.write(f"Mean F1 Score: {results['mean_test_score'][i]}\n")
+            file.write(f"Mean Precision: {results['mean_test_precision'][i]}\n")
+            file.write(f"Mean Recall: {results['mean_test_recall'][i]}\n")
+            file.write(f"Mean Hamming Loss: {results['mean_test_hamming_loss'][i]}\n")
         
         file.write("Best Parameters:\n")
         file.write(str(best_params) + "\n")
