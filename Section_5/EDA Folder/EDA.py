@@ -41,7 +41,7 @@ for i in range(len(column_names)):
         variable2 = column_names[j]
 
         # Create a contingency table
-        contingency_table = pd.crosstab(data[variable1], data[variable2])
+        contingency_table = pd.crosstab(non_dummy[variable1], non_dummy[variable2])
 
         # Perform the chi-square test
         chi2, p, dof, expected = chi2_contingency(contingency_table)
