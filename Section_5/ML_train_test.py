@@ -12,15 +12,27 @@ def train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encod
         X_train_encoded, y_train_encoded = encode_categorical(X_train, y_train, label_encoder_path, encoder_path, mode='train')
 
         # Find the best Random Forest model
-        best_rf_model, best_params, best_score = find_best_random_forest(X_train_encoded, y_train_encoded, dir_path, seed)
+        if 'rf' in model_path:
+            best_rf_model, best_rf_params, best_rf_score = find_best_random_forest(X_train_encoded, y_train_encoded, dir_path, seed)
         
-        # Save the best model to the same directory
-        with open(model_path, 'wb') as file:
-            pickle.dump(best_rf_model, file)
+            # Save the best model to the same directory
+            with open(model_path, 'wb') as file:
+                pickle.dump(best_rf_model, file)
+
+            print(f"Best rf model saved for directory: {dir_name}")
+            print("Best rf Parameters:", best_rf_params)
+            print("Best rf Score:", best_rf_score)
         
-        print(f"Best model saved for directory: {dir_name}")
-        print("Best Parameters:", best_params)
-        print("Best Score:", best_score)
+        elif 'svm' in model_path:
+            best_svm_model, best_svm_params, best_svm_score = find_best_svm_model(X_train_encoded, y_train_encoded, dir_path, seed)
+        
+            # Save the best model to the same directory
+            with open(model_path, 'wb') as file:
+                pickle.dump(best_svm_model, file)
+            
+            print(f"Best svm model saved for directory: {dir_name}")
+            print("Best svm Parameters:", best_svm_params)
+            print("Best svm Score:", best_svm_score)
      
 def test_models(dir_path, X_test_path, y_test_path, label_encoder_path, encoder_path, model_path, seed, average='weighted'):
      
