@@ -147,9 +147,6 @@ def select_best_svm_model(X, y, dir_path, seed):
 
     return best_model, best_params, best_score
 
-
-    return best_model, best_params, best_score
-
 def evaluate_model(X_test, y_test, model):
     # Make predictions on the test set
     y_pred = model.predict(X_test)
