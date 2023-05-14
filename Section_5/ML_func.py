@@ -62,14 +62,11 @@ def find_best_random_forest(X, y, dir_path, seed):
     # Define the scoring metric (f1_score in this case)
     # Define the scoring metrics
     scoring_metrics = {
-        'precision': make_scorer(precision_score, average='micro'),
-        'recall': make_scorer(recall_score, average='micro'),
-        'f1_score': make_scorer(f1_score, average='micro'),
-        'hamming_loss': make_scorer(hamming_loss, greater_is_better=False)
+        make_scorer(recall_score, average='macro')
     }
     
     # Perform grid search to find the best configuration 
-    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=scoring_metrics, refit='f1_score') ## CV = 3 to improve robustness of results
+    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=scoring_metrics) ## CV = 3 to improve robustness of results
     grid_search.fit(X, y)
     
     # Get the best model and its parameters
@@ -118,14 +115,11 @@ def find_best_svm_model(X, y, dir_path, seed):
     }
 
     scoring_metrics = {
-        'precision': make_scorer(precision_score, average='micro'),
-        'recall': make_scorer(recall_score, average='micro'),
-        'f1_score': make_scorer(f1_score, average='micro'),
-        'hamming_loss': make_scorer(hamming_loss, greater_is_better=False)
+        make_scorer(recall_score, average='macro')
     }
 
     # Perform grid search with cross-validation
-    grid_search = GridSearchCV(svm, param_grid, cv=3, scoring=scoring_metrics, refit='f1_score')
+    grid_search = GridSearchCV(svm, param_grid, cv=3, scoring=scoring_metrics)
     grid_search.fit(X, y)
 
     # Get the best SVM model
