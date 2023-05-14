@@ -9,14 +9,15 @@ from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.metrics import f1_score, make_scorer, precision_score, recall_score, hamming_loss
 
 def encode_categorical(X, y, label_encoder_path, encoder_path, mode):
-    x_categorical_cols = ['maint','doors','persons','lug_boot','safety','class']
     # Perform one-hot encoding on categorical columns
     if mode == 'train':
-        encoder = OneHotEncoder(handle_unknown='ignore', sparse=False)
-        X_encoded = pd.DataFrame(encoder.fit_transform(X[x_categorical_cols]))
-
-        # Reassign the encoded categorical columns to the original DataFrame
-        X_encoded.columns = encoder.get_feature_names(x_categorical_cols)
+        label_encoder = LabelEncoder()
+        X['buying'] = label_encoder.fit_transform(X['buying'])
+        X['maint'] = label_encoder.fit_transform(X['maint'])
+        X['doors'] = label_encoder.fit_transform(X['doors'])
+        X['persons'] = label_encoder.fit_transform(X['persons'])
+        X['lug_boot'] = label_encoder.fit_transform(X['lug_boot'])
+        X['safety'] = label_encoder.fit_transform(X['safety'])
         
         # Encode the target variable
         label_encoder = LabelEncoder()
