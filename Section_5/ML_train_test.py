@@ -74,8 +74,8 @@ if __name__ == "__main__":
                 model_svm_path = os.path.join(dir_path, f"best_svm_model_{seed}.pkl")
 
                 for model_path in [model_rf_path, model_svm_path]:
-                    train_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
-                    precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, encoder_path, model_path, seed)
+                    train_models(dir_path, X_train_path, y_train_path, label_encoder_path, model_path, seed)
+                    precision, recall, f1 = test_models(dir_path, X_train_path, y_train_path, label_encoder_path, model_path, seed)
 
                     if model_path not in model_results:
                         model_results[model_path] = {'precision':precision, 
