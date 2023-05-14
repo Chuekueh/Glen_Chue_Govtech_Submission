@@ -10,7 +10,6 @@ car_data = pd.read_csv('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section
 #Set Index to preserve order of rows:
 car_data['row_num'] = np.arange(len(car_data))
 car_data['row_num'] = car_data.reset_index().index
-car_data['persons_col_present'] = 1 # to handle its absence in the prediction data
 
 # Non-dummified Dataset 
 non_dummy = car_data

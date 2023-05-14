@@ -68,7 +68,7 @@ def find_best_random_forest(X, y, dir_path, seed):
     }
     
     # Perform grid search to find the best configuration 
-    grid_search = GridSearchCV(rf_classifier, param_grid, cv=3, scoring=scoring_metrics, refit='f1_score') ## CV = 3 to improve robustness of results
+    grid_search = GridSearchCV(rf_classifier, param_grid, cv=5, scoring=scoring_metrics, refit='f1_score') ## CV = 3 to improve robustness of results
     grid_search.fit(X, y)
     
     # Get the best model and its parameters

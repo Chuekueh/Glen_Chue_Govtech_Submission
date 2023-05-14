@@ -59,7 +59,7 @@ if __name__ == "__main__":
     with open('/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/model_results.json', 'r') as file:
         model_results = json.load(file)
 
-    data_dir = '/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data'
+    data_dir = "/Users/glen/Desktop/Glen_Chue_Govtech_Submission/Section_5/ML_Data"
     for dir_name in os.listdir(data_dir):
         dir_path = os.path.join(data_dir, dir_name)
         if os.path.isdir(dir_path):

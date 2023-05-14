@@ -18,7 +18,7 @@ prediction_model, encoder, label_encoder = select_model(available_models, 'preci
 # Define Input Data and Carry our prediction
 input_data = {'maint': 'High',
               'doors': 4,
-              'persons': np.nan,
+              'persons': 'missing',
               'lug_boot': 'big',
               'safety':'high',
               'class':'good'}
